@@ -25,10 +25,11 @@ bool GenerateKeyEx(size_t key_bits_length, int l, int k,
                  RSAPublicKey &public_key,
                  RSAKeyMeta &key_meta, const KeyGenParam &param);
 
-safeheron::bignum::BN CombineSignatures(const std::vector<RSASigShare> &sig_arr,
-                                        const safeheron::bignum::BN &m,
-                                        const RSAPublicKey &public_key,
-                                        const RSAKeyMeta &key_meta);
+bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
+                       const safeheron::bignum::BN &m,
+                       const RSAPublicKey &public_key,
+                       const RSAKeyMeta &key_meta,
+                       safeheron::bignum::BN &out_sig);
 
 };
 };

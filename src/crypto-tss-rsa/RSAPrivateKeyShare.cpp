@@ -1,5 +1,6 @@
 #include "RSAPrivateKeyShare.h"
 #include "RSASigShare.h"
+#include "RSASigShareProof.h"
 #include "common.h"
 
 using safeheron::bignum::BN;
@@ -44,7 +45,11 @@ RSASigShare RSAPrivateKeyShare::Sign(const safeheron::bignum::BN &m,
     // x_i = x^{2 * s_i}
     BN xi = x.PowM(si_ * 2, public_key.n());
 
-    return {i_, xi};
+    RSASigShareProof proof;
+    proof.Prove(si_, key_meta.vkv(), key_meta.vki(i_-1), x, public_key.n(), xi);
+
+
+    return {i_, xi, proof.z(), proof.c()};
 }
 
 

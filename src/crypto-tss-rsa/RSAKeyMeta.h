@@ -32,6 +32,7 @@ public:
 
     const std::vector<safeheron::bignum::BN> &vki_arr() const;
     void set_vki_arr(const std::vector<safeheron::bignum::BN> &vki_arr);
+    const bignum::BN &vki(size_t index) const;
 
     const bignum::BN &vku() const;
     void set_vku(const bignum::BN &vku);

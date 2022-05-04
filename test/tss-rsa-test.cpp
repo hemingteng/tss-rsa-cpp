@@ -94,7 +94,9 @@ TEST(BN, Add) {
 
     // Combine signatures
     // Distributed signature
-    BN sig = safeheron::tss_rsa::CombineSignatures(sig_share_arr, m, pub, key_meta);
+    BN sig;
+    status = safeheron::tss_rsa::CombineSignatures(sig_share_arr, m, pub, key_meta, sig);
+    EXPECT_TRUE(status);
     std::cout << "final signature = 0x" << sig.Inspect() << std::endl;
 
     // Verify the final signature.

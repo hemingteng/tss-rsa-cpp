@@ -48,6 +48,10 @@ void RSAKeyMeta::set_vki_arr(const std::vector<safeheron::bignum::BN> &vki_arr) 
     this->vki_arr_.insert(this->vki_arr_.begin(), vki_arr.begin(), vki_arr.end());
 }
 
+const safeheron::bignum::BN &RSAKeyMeta::vki(size_t index) const {
+    return vki_arr_.at(index);
+}
+
 const bignum::BN &RSAKeyMeta::vku() const {
     return vku_;
 }

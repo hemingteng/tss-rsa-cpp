@@ -14,8 +14,11 @@ namespace tss_rsa{
 
 class RSASigShare{
 public:
-    RSASigShare(){ index_ = 0; sig_share_ = safeheron::bignum::BN::ZERO;}
-    RSASigShare(int index, const safeheron::bignum::BN &sig_share);
+    RSASigShare();
+    RSASigShare(int index,
+                const safeheron::bignum::BN &sig_share,
+                const safeheron::bignum::BN &z,
+                const safeheron::bignum::BN &c);
 
     int index() const;
     void set_index(int index);
@@ -23,9 +26,17 @@ public:
     const bignum::BN &sig_share() const;
     void set_sig_share(const bignum::BN &sig_share);
 
+    const bignum::BN &z() const;
+    void set_z(const bignum::BN &z);
+
+    const bignum::BN &c() const;
+    void set_c(const bignum::BN &c);
+
 private:
     int index_;
     safeheron::bignum::BN sig_share_;
+    safeheron::bignum::BN z_;
+    safeheron::bignum::BN c_;
 };
 
 };

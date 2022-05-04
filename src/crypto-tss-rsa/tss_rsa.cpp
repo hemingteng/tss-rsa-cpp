@@ -7,6 +7,7 @@
 #include "exception/located_exception.h"
 #include "crypto-sss/vsss.h"
 #include "common.h"
+#include "RSASigShareProof.h"
 
 using safeheron::bignum::BN;
 using safeheron::exception::LocatedException;
@@ -56,18 +57,6 @@ static bool InternalGenerateKey(size_t key_bits_length, int l, int k,
     sss::vsss::RecoverSecret(secret, share_arr, m);
     std::cout << "secret = 0x" << secret.Inspect() << std::endl;
 
-    std::cout << "f = 0x" << f.Inspect() << std::endl;
-    BN vkv = (f * f) % n;
-    std::cout << "vkv = 0x" << vkv.Inspect() << std::endl;
-    std::vector<BN> vki_arr;
-    for(int i = 1; i <= l; i++){
-        BN t_vki = vkv.PowM(share_arr[i-1].y, n);
-        vki_arr.push_back(t_vki);
-        std::cout << "vkv" << i << " = 0x" << t_vki.Inspect() << std::endl;
-    }
-    std::cout << "vkv = 0x" << vkv.Inspect() << std::endl;
-
-    std::cout << "vku = 0x" << vku.Inspect() << std::endl;
 
     // Compute \Delta = l!
     BN delta(1);
@@ -84,16 +73,33 @@ static bool InternalGenerateKey(size_t key_bits_length, int l, int k,
         std::cout << "s" << i << " = 0x" << si.Inspect() << std::endl;
     }
 
+
+    // Public key
+    public_key.set_n(n);
+    public_key.set_e(e);
+
+
+    // Validate Key
+    std::cout << "f = 0x" << f.Inspect() << std::endl;
+    BN vkv = (f * f) % n;
+    std::cout << "vkv = 0x" << vkv.Inspect() << std::endl;
+    std::vector<BN> vki_arr;
+    for(int i = 1; i <= l; i++){
+        std::cout << "=> vkv = 0x" << vkv.Inspect() << std::endl;
+        std::cout << "=> private_key_share_arr[i-1].si() = 0x" << private_key_share_arr[i-1].si().Inspect() << std::endl;
+        BN t_vki = vkv.PowM(private_key_share_arr[i-1].si(), n);
+        vki_arr.push_back(t_vki);
+        std::cout << "vkv" << i << " = 0x" << t_vki.Inspect() << std::endl;
+    }
+    std::cout << "vkv = 0x" << vkv.Inspect() << std::endl;
+
+    std::cout << "vku = 0x" << vku.Inspect() << std::endl;
     // Key meta data
     key_meta.set_k(k);
     key_meta.set_l(l);
     key_meta.set_vkv(vkv);
     key_meta.set_vki_arr(vki_arr);
     key_meta.set_vku(vku);
-
-    // Public key
-    public_key.set_n(n);
-    public_key.set_e(e);
 
 
     // S is a subset of (1, ... ,l)
@@ -241,10 +247,11 @@ bool GenerateKeyEx(size_t key_bits_length, int l, int k,
 }
 
 
-safeheron::bignum::BN CombineSignatures(const std::vector<RSASigShare> &sig_arr,
-                                        const safeheron::bignum::BN &m,
-                                        const RSAPublicKey &public_key,
-                                        const RSAKeyMeta &key_meta){
+bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
+                       const safeheron::bignum::BN &m,
+                       const RSAPublicKey &public_key,
+                       const RSAKeyMeta &key_meta,
+                       safeheron::bignum::BN &out_sig){
     std::cout<< "public_key.n(): " << public_key.n().Inspect() << std::endl;
     // e' is always set to 4.
     BN ep(4);
@@ -256,6 +263,14 @@ safeheron::bignum::BN CombineSignatures(const std::vector<RSASigShare> &sig_arr,
     if( jacobi_m_n == -1){
         std::cout << "jacobi_m_n === -1" << std::endl;
         x = (x * key_meta.vku().PowM(public_key.e(), public_key.n())) % public_key.n();
+    }
+
+    // Validate signature share
+    bool is_valid_sig = true;
+    for(const auto &sig: sig_arr){
+        RSASigShareProof proof(sig.z(), sig.c());
+        is_valid_sig &= proof.Verify(key_meta.vkv(), key_meta.vki(sig.index()-1), x, public_key.n(), sig.sig_share());
+        if(!is_valid_sig) return false;
     }
 
     // Compute \Delta = l!
@@ -294,7 +309,8 @@ safeheron::bignum::BN CombineSignatures(const std::vector<RSASigShare> &sig_arr,
         y = (y * key_meta.vku().InvM(public_key.n())) % public_key.n();
         std::cout << "******************" << std::endl;
     }
-    return y;
+    out_sig = y;
+    return true;
 }
 
 };
