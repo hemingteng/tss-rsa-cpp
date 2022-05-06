@@ -13,6 +13,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         crypto-tss-rsa/KeyGenParam.cpp
         crypto-tss-rsa/RSASigShareProof.cpp
         crypto-tss-rsa/tss_rsa.cpp
+        crypto-tss-rsa/tss_rsa.pb.cc
         )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE

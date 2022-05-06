@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "crypto-bn/bn.h"
+#include "tss_rsa.pb.h"
 
 
 namespace safeheron {
@@ -39,6 +40,14 @@ public:
                 const safeheron::bignum::BN &n,
                 const safeheron::bignum::BN &sig_i);
 
+    bool ToProtoObject(safeheron::proto::RSASigShareProof &proof) const;
+    bool FromProtoObject(const safeheron::proto::RSASigShareProof &proof);
+
+    bool ToBase64(std::string& base64) const;
+    bool FromBase64(const std::string& base64);
+
+    bool ToJsonString(std::string &json_str) const;
+    bool FromJsonString(const std::string &json_str);
 private:
     safeheron::bignum::BN z_;
     safeheron::bignum::BN c_;

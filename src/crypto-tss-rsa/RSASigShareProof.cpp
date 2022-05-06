@@ -7,10 +7,18 @@
 #include <cstring>
 #include <sstream>
 #include <string>
+#include <google/protobuf/util/json_util.h>
 #include "exception/safeheron_exceptions.h"
 #include "crypto-bn/rand.h"
 #include "crypto-hash/sha256.h"
+#include "crypto-encode/base64.h"
 
+using std::string;
+using google::protobuf::util::Status;
+using google::protobuf::util::MessageToJsonString;
+using google::protobuf::util::JsonStringToMessage;
+using google::protobuf::util::JsonPrintOptions;
+using google::protobuf::util::JsonParseOptions;
 using safeheron::bignum::BN;
 using safeheron::exception::LocatedException;
 using safeheron::exception::OpensslException;
@@ -125,6 +133,81 @@ bool RSASigShareProof::Verify(const safeheron::bignum::BN &v,
 
     // check c == c_
     return c == c_;
+}
+
+bool RSASigShareProof::ToProtoObject(proto::RSASigShareProof &proof) const {
+    bool ok = true;
+
+    std::string str;
+    z_.ToHexStr(str);
+    proof.mutable_z()->assign(str);
+
+    c_.ToHexStr(str);
+    proof.mutable_c()->assign(str);
+
+    return true;
+}
+
+bool RSASigShareProof::FromProtoObject(const proto::RSASigShareProof &proof) {
+    bool ok = true;
+
+    z_ = BN::FromHexStr(proof.z());
+    c_ = BN::FromHexStr(proof.c());
+
+    return true;
+}
+
+typedef RSASigShareProof TheClass;
+typedef safeheron::proto::RSASigShareProof ProtoObject;
+
+bool TheClass::ToBase64(string &b64) const {
+    bool ok = true;
+    b64.clear();
+    safeheron::proto::RSASigShareProof proto_object;
+    ok = ToProtoObject(proto_object);
+    if (!ok) return false;
+
+    string proto_bin = proto_object.SerializeAsString();
+    b64 = encode::base64::EncodeToBase64(proto_bin, true);
+    return true;
+}
+
+bool TheClass::FromBase64(const string &b64) {
+    bool ok = true;
+
+    string data = encode::base64::DecodeFromBase64(b64);
+
+    safeheron::proto::RSASigShareProof proto_object;
+    ok = proto_object.ParseFromString(data);
+    if (!ok) return false;
+
+    return FromProtoObject(proto_object);
+}
+
+bool TheClass::ToJsonString(string &json_str) const {
+    bool ok = true;
+    json_str.clear();
+    ProtoObject proto_object;
+    ok = ToProtoObject(proto_object);
+    if (!ok) return false;
+
+    JsonPrintOptions jp_option;
+    jp_option.add_whitespace = true;
+    Status stat = MessageToJsonString(proto_object, &json_str, jp_option);
+    if (!stat.ok()) return false;
+
+    return true;
+}
+
+
+bool TheClass::FromJsonString(const string &json_str) {
+    ProtoObject proto_object;
+    google::protobuf::util::JsonParseOptions jp_option;
+    jp_option.ignore_unknown_fields = true;
+    Status stat = JsonStringToMessage(json_str, &proto_object);
+    if (!stat.ok()) return false;
+
+    return FromProtoObject(proto_object);
 }
 
 

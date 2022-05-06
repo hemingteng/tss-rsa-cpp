@@ -12,8 +12,7 @@
 #include "RSAPrivateKeyShare.h"
 #include "RSAPublicKey.h"
 #include "RSASigShare.h"
-
-struct bignum_st;
+#include "tss_rsa.pb.h"
 
 namespace safeheron {
 namespace tss_rsa{
@@ -33,6 +32,14 @@ public:
                      const safeheron::tss_rsa::RSAKeyMeta &key_meta,
                      const safeheron::tss_rsa::RSAPublicKey &public_key);
 
+    bool ToProtoObject(safeheron::proto::RSAPrivateKeyShare &proof) const;
+    bool FromProtoObject(const safeheron::proto::RSAPrivateKeyShare &proof);
+
+    bool ToBase64(std::string& base64) const;
+    bool FromBase64(const std::string& base64);
+
+    bool ToJsonString(std::string &json_str) const;
+    bool FromJsonString(const std::string &json_str);
 private:
     int i_;
     safeheron::bignum::BN si_;

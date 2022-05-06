@@ -2,7 +2,15 @@
 #include "RSASigShare.h"
 #include "RSASigShareProof.h"
 #include "common.h"
+#include <google/protobuf/util/json_util.h>
+#include "crypto-encode/base64.h"
 
+using std::string;
+using google::protobuf::util::Status;
+using google::protobuf::util::MessageToJsonString;
+using google::protobuf::util::JsonStringToMessage;
+using google::protobuf::util::JsonPrintOptions;
+using google::protobuf::util::JsonParseOptions;
 using safeheron::bignum::BN;
 
 namespace safeheron {
@@ -52,6 +60,83 @@ RSASigShare RSAPrivateKeyShare::Sign(const safeheron::bignum::BN &m,
     return {i_, xi, proof.z(), proof.c()};
 }
 
+
+bool RSAPrivateKeyShare::ToProtoObject(proto::RSAPrivateKeyShare &proof) const {
+    bool ok = true;
+
+    if(i_ == 0) return false;
+    proof.set_i(i_);
+
+    std::string str;
+    si_.ToHexStr(str);
+    proof.mutable_si()->assign(str);
+
+    return true;
+}
+
+bool RSAPrivateKeyShare::FromProtoObject(const proto::RSAPrivateKeyShare &proof) {
+    bool ok = true;
+
+    i_ = proof.i();
+    if(i_ == 0) return false;
+
+    si_ = BN::FromHexStr(proof.si());
+
+    return true;
+}
+
+typedef RSAPrivateKeyShare TheClass;
+typedef safeheron::proto::RSAPrivateKeyShare ProtoObject;
+
+bool TheClass::ToBase64(string &b64) const {
+    bool ok = true;
+    b64.clear();
+    safeheron::proto::RSAPrivateKeyShare proto_object;
+    ok = ToProtoObject(proto_object);
+    if (!ok) return false;
+
+    string proto_bin = proto_object.SerializeAsString();
+    b64 = encode::base64::EncodeToBase64(proto_bin, true);
+    return true;
+}
+
+bool TheClass::FromBase64(const string &b64) {
+    bool ok = true;
+
+    string data = encode::base64::DecodeFromBase64(b64);
+
+    safeheron::proto::RSAPrivateKeyShare proto_object;
+    ok = proto_object.ParseFromString(data);
+    if (!ok) return false;
+
+    return FromProtoObject(proto_object);
+}
+
+bool TheClass::ToJsonString(string &json_str) const {
+    bool ok = true;
+    json_str.clear();
+    ProtoObject proto_object;
+    ok = ToProtoObject(proto_object);
+    if (!ok) return false;
+
+    JsonPrintOptions jp_option;
+    jp_option.add_whitespace = true;
+    Status stat = MessageToJsonString(proto_object, &json_str, jp_option);
+    if (!stat.ok()) return false;
+
+    return true;
+}
+
+
+bool TheClass::FromJsonString(const string &json_str) {
+    ProtoObject proto_object;
+    google::protobuf::util::JsonParseOptions jp_option;
+    jp_option.ignore_unknown_fields = true;
+    Status stat = JsonStringToMessage(json_str, &proto_object);
+    if (!stat.ok()) return false;
+
+    return FromProtoObject(proto_object);
+}
 
 };
 };

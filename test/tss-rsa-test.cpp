@@ -55,6 +55,7 @@ TEST(BN, Add) {
 */
 
 TEST(BN, Add) {
+    std::string json_str;
     BN m("12345678123456781234567812345678", 16);
 
     KeyGenParam param(0,
@@ -74,6 +75,16 @@ TEST(BN, Add) {
     RSAKeyMeta key_meta;
     bool status = safeheron::tss_rsa::GenerateKeyEx(key_bits_length, l, k, priv_arr, pub, key_meta, param);
     EXPECT_TRUE(status);
+    key_meta.ToJsonString(json_str);
+    std::cout << json_str << std::endl;
+    pub.ToJsonString(json_str);
+    std::cout << json_str << std::endl;
+    priv_arr[0].ToJsonString(json_str);
+    std::cout << json_str << std::endl;
+    priv_arr[1].ToJsonString(json_str);
+    std::cout << json_str << std::endl;
+    priv_arr[2].ToJsonString(json_str);
+    std::cout << json_str << std::endl;
 
     // Party 1 sign.
     RSASigShare sig_share0 = priv_arr[0].Sign(m, key_meta, pub);
@@ -91,6 +102,13 @@ TEST(BN, Add) {
     sig_share_arr.push_back(sig_share0);
     sig_share_arr.push_back(sig_share1);
     sig_share_arr.push_back(sig_share2);
+
+    sig_share0.ToJsonString(json_str);
+    std::cout << json_str << std::endl;
+    sig_share1.ToJsonString(json_str);
+    std::cout << json_str << std::endl;
+    sig_share2.ToJsonString(json_str);
+    std::cout << json_str << std::endl;
 
     // Combine signatures
     // Distributed signature
