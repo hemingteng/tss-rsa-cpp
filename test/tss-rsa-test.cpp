@@ -15,7 +15,7 @@ using safeheron::exception::OpensslException;
 using safeheron::exception::BadAllocException;
 using safeheron::exception::RandomSourceException;
 
-TEST(BN, Example_KeyGen) {
+TEST(BN, KeyGen2_3_Sign_3_3) {
     std::string json_str;
     std::string message("12345678123456781234567812345678");
 
@@ -29,42 +29,37 @@ TEST(BN, Example_KeyGen) {
     bool status = safeheron::tss_rsa::GenerateKey(key_bits_length, l, k, priv_arr, pub, key_meta);
     EXPECT_TRUE(status);
     key_meta.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "key meta data: " << json_str << std::endl;
+
     pub.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "public key: " << json_str << std::endl;
+
     priv_arr[0].ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "private key share 1: " << json_str << std::endl;
     priv_arr[1].ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "private key share 2: "  << json_str << std::endl;
     priv_arr[2].ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "private key share 3: "  << json_str << std::endl;
 
     // Party 1 sign.
     RSASigShare sig_share0 = priv_arr[0].Sign(message, key_meta, pub);
-    std::cout << "i = 0x" << sig_share0.index() << std::endl;
-    std::cout << "sig1 = 0x" << sig_share0.sig_share().Inspect() << std::endl;
+    sig_share0.ToJsonString(json_str);
+    std::cout << "signature share 1: " << json_str << std::endl;
     // Party 2 sign.
     RSASigShare sig_share1 = priv_arr[1].Sign(message, key_meta, pub);
-    std::cout << "i = 0x" << sig_share1.index() << std::endl;
-    std::cout << "sig2 = 0x" << sig_share1.sig_share().Inspect() << std::endl;
+    sig_share1.ToJsonString(json_str);
+    std::cout << "signature share 2: " <<  json_str << std::endl;
     // Party 3 sign.
     RSASigShare sig_share2 = priv_arr[2].Sign(message, key_meta, pub);
-    std::cout << "i = 0x" << sig_share2.index() << std::endl;
-    std::cout << "sig3 = 0x" << sig_share2.sig_share().Inspect() << std::endl;
+    sig_share2.ToJsonString(json_str);
+    std::cout << "signature share 3: " <<  json_str << std::endl;
+
+    // Combine signatures
+    // Distributed signature
     std::vector<RSASigShare> sig_share_arr;
     sig_share_arr.push_back(sig_share0);
     sig_share_arr.push_back(sig_share1);
     sig_share_arr.push_back(sig_share2);
-
-    sig_share0.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
-    sig_share1.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
-    sig_share2.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
-
-    // Combine signatures
-    // Distributed signature
     BN sig;
     status = safeheron::tss_rsa::CombineSignatures(sig_share_arr, message, pub, key_meta, sig);
     EXPECT_TRUE(status);
@@ -75,7 +70,7 @@ TEST(BN, Example_KeyGen) {
 }
 
 
-TEST(BN, Example_KeyGenEx) {
+TEST(BN, KeyGenEx2_3_Sign_3_3) {
     std::string json_str;
     std::string message("12345678123456781234567812345678");
 
@@ -95,42 +90,37 @@ TEST(BN, Example_KeyGenEx) {
     bool status = safeheron::tss_rsa::GenerateKeyEx(key_bits_length, l, k, param, priv_arr, pub, key_meta);
     EXPECT_TRUE(status);
     key_meta.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "key meta data: " << json_str << std::endl;
+
     pub.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "public key: " << json_str << std::endl;
+
     priv_arr[0].ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "private key share 1: " << json_str << std::endl;
     priv_arr[1].ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "private key share 2: " << json_str << std::endl;
     priv_arr[2].ToJsonString(json_str);
-    std::cout << json_str << std::endl;
+    std::cout << "private key share 3: " << json_str << std::endl;
 
     // Party 1 sign.
     RSASigShare sig_share0 = priv_arr[0].Sign(message, key_meta, pub);
-    std::cout << "i = 0x" << sig_share0.index() << std::endl;
-    std::cout << "sig1 = 0x" << sig_share0.sig_share().Inspect() << std::endl;
+    sig_share0.ToJsonString(json_str);
+    std::cout << "signature share 1: " << json_str << std::endl;
     // Party 2 sign.
     RSASigShare sig_share1 = priv_arr[1].Sign(message, key_meta, pub);
-    std::cout << "i = 0x" << sig_share1.index() << std::endl;
-    std::cout << "sig2 = 0x" << sig_share1.sig_share().Inspect() << std::endl;
+    sig_share1.ToJsonString(json_str);
+    std::cout << "signature share 2: " << json_str << std::endl;
     // Party 3 sign.
     RSASigShare sig_share2 = priv_arr[2].Sign(message, key_meta, pub);
-    std::cout << "i = 0x" << sig_share2.index() << std::endl;
-    std::cout << "sig3 = 0x" << sig_share2.sig_share().Inspect() << std::endl;
+    sig_share2.ToJsonString(json_str);
+    std::cout << "signature share 3: " << json_str << std::endl;
+
+    // Combine signatures
+    // Distributed signature
     std::vector<RSASigShare> sig_share_arr;
     sig_share_arr.push_back(sig_share0);
     sig_share_arr.push_back(sig_share1);
     sig_share_arr.push_back(sig_share2);
-
-    sig_share0.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
-    sig_share1.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
-    sig_share2.ToJsonString(json_str);
-    std::cout << json_str << std::endl;
-
-    // Combine signatures
-    // Distributed signature
     BN sig;
     status = safeheron::tss_rsa::CombineSignatures(sig_share_arr, message, pub, key_meta, sig);
     EXPECT_TRUE(status);
@@ -139,6 +129,54 @@ TEST(BN, Example_KeyGenEx) {
     // Verify the final signature.
     EXPECT_TRUE(pub.VerifySignature(message, sig));
 }
+
+TEST(BN, KeyGenEx2_3_Sign_2_3) {
+    std::string json_str;
+    std::string message("12345678123456781234567812345678");
+
+    // Key Generation
+    int key_bits_length = 1024;
+    int k = 2;
+    int l = 3;
+    std::vector<RSAPrivateKeyShare> priv_arr;
+    RSAPublicKey pub;
+    RSAKeyMeta key_meta;
+    bool status = safeheron::tss_rsa::GenerateKey(key_bits_length, l, k, priv_arr, pub, key_meta);
+    EXPECT_TRUE(status);
+    key_meta.ToJsonString(json_str);
+    std::cout << "key meta data: " << json_str << std::endl;
+
+    pub.ToJsonString(json_str);
+    std::cout << "public key: " << json_str << std::endl;
+
+    priv_arr[0].ToJsonString(json_str);
+    std::cout << "private key share 1: " << json_str << std::endl;
+    priv_arr[2].ToJsonString(json_str);
+    std::cout << "private key share 3: "  << json_str << std::endl;
+
+    // Party 1 sign.
+    RSASigShare sig_share0 = priv_arr[0].Sign(message, key_meta, pub);
+    sig_share0.ToJsonString(json_str);
+    std::cout << "signature share 1: " << json_str << std::endl;
+    // Party 3 sign.
+    RSASigShare sig_share2 = priv_arr[2].Sign(message, key_meta, pub);
+    sig_share2.ToJsonString(json_str);
+    std::cout << "signature share 3: " <<  json_str << std::endl;
+
+    // Combine signatures
+    // Distributed signature
+    std::vector<RSASigShare> sig_share_arr;
+    sig_share_arr.push_back(sig_share0);
+    sig_share_arr.push_back(sig_share2);
+    BN sig;
+    status = safeheron::tss_rsa::CombineSignatures(sig_share_arr, message, pub, key_meta, sig);
+    EXPECT_TRUE(status);
+    std::cout << "final signature = 0x" << sig.Inspect() << std::endl;
+
+    // Verify the final signature.
+    EXPECT_TRUE(pub.VerifySignature(message, sig));
+}
+
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

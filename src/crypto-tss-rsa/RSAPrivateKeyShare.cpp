@@ -45,10 +45,8 @@ RSASigShare RSAPrivateKeyShare::InternalSign(const safeheron::bignum::BN &_x,
                                              const safeheron::tss_rsa::RSAPublicKey &public_key){
     // x = x*u^e, if (m, n) == -1
     BN x = _x;
-    std::cout << "x: " << x.Inspect() << std::endl;
     if(BN::JacobiSymbol(x, public_key.n()) == -1){
         x = (x * key_meta.vku().PowM(public_key.e(), public_key.n())) % public_key.n();
-        std::cout << "JacobiSymbol == 1" << std::endl;
     }
 
     // x_i = x^{2 * s_i}

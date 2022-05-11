@@ -80,13 +80,6 @@ void RSASigShareProof::Prove(const safeheron::bignum::BN &si,
     sig2.ToBytesBE(buf);      sha256.Write((const uint8_t *)buf.c_str(), buf.size());
     vp.ToBytesBE(buf);        sha256.Write((const uint8_t *)buf.c_str(), buf.size());
     xp.ToBytesBE(buf);        sha256.Write((const uint8_t *)buf.c_str(), buf.size());
-    std::cout << "\n\nr = 0x" << r.Inspect() << std::endl;
-    std::cout << "v = 0x" << v.Inspect() << std::endl;
-    std::cout << "x_tilde = 0x" << x_tilde.Inspect() << std::endl;
-    std::cout << "vi = 0x" << vi.Inspect() << std::endl;
-    std::cout << "sig2 = 0x" << sig2.Inspect() << std::endl;
-    std::cout << "vp = 0x" << vp.Inspect() << std::endl;
-    std::cout << "xp = 0x" << xp.Inspect() << std::endl;
     sha256.Finalize(digest);
     BN c = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
 
@@ -110,13 +103,6 @@ bool RSASigShareProof::Verify(const safeheron::bignum::BN &v,
     BN xp = ( x_tilde.PowM(z_, n) * sig_i.PowM(c_ * (-2), n) ) % n;
     // sig^2  mod n
     BN sig2 = sig_i.PowM(BN::TWO, n);
-
-    std::cout << "\n\nv = 0x" << v.Inspect() << std::endl;
-    std::cout << "x_tilde = 0x" << x_tilde.Inspect() << std::endl;
-    std::cout << "vi = 0x" << vi.Inspect() << std::endl;
-    std::cout << "sig2 = 0x" << sig2.Inspect() << std::endl;
-    std::cout << "vp = 0x" << vp.Inspect() << std::endl;
-    std::cout << "xp = 0x" << xp.Inspect() << std::endl;
 
     // c = H(v, x_tilde, vi, x^2, v', x')
     uint8_t digest[CSHA256::OUTPUT_SIZE];
