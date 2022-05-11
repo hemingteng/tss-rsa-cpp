@@ -10,6 +10,7 @@
 #include "exception/safeheron_exceptions.h"
 #include <google/protobuf/util/json_util.h>
 #include "crypto-encode/base64.h"
+#include "crypto-hash/hash256.h"
 
 using std::string;
 using google::protobuf::util::Status;
@@ -22,6 +23,7 @@ using safeheron::exception::LocatedException;
 using safeheron::exception::OpensslException;
 using safeheron::exception::BadAllocException;
 using safeheron::exception::RandomSourceException;
+using safeheron::hash::CSHA256;
 
 
 namespace safeheron {
@@ -33,8 +35,21 @@ RSAPublicKey::RSAPublicKey(const safeheron::bignum::BN &n, const safeheron::bign
     this->e_ = e;
 }
 
-bool RSAPublicKey::VerifySignature(const safeheron::bignum::BN &m, const safeheron::bignum::BN &y){
-    return y.PowM(e_, n_) == m;
+bool RSAPublicKey::InternalVerifySignature(const safeheron::bignum::BN &x, const safeheron::bignum::BN &y){
+    return y.PowM(e_, n_) == x;
+}
+
+bool RSAPublicKey::VerifySignature(const uint8_t *msg, size_t msg_len, const safeheron::bignum::BN &sig){
+    uint8_t digest[CSHA256::OUTPUT_SIZE];
+    CSHA256 sha256;
+    sha256.Write((uint8_t *)msg, msg_len);
+    sha256.Finalize(digest);
+    BN x = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
+    return InternalVerifySignature(x, sig);
+}
+
+bool RSAPublicKey::VerifySignature(const std::string &msg, const safeheron::bignum::BN &sig){
+    return VerifySignature((const uint8_t* )msg.c_str(), msg.length(), sig);
 }
 
 const bignum::BN &RSAPublicKey::n() const {

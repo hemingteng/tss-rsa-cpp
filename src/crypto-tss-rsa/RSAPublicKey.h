@@ -19,7 +19,9 @@ public:
     RSAPublicKey(){}
     RSAPublicKey(const safeheron::bignum::BN &n, const safeheron::bignum::BN &e);
 
-    bool VerifySignature(const safeheron::bignum::BN &m, const safeheron::bignum::BN &sig);
+    bool VerifySignature(const uint8_t *msg, size_t msg_len, const safeheron::bignum::BN &sig);
+    bool VerifySignature(const std::string &msg, const safeheron::bignum::BN &sig);
+    bool InternalVerifySignature(const safeheron::bignum::BN &x, const safeheron::bignum::BN &sig);
 
     const bignum::BN &n() const;
     void set_n(const bignum::BN &n);

@@ -6,11 +6,13 @@
 #include "crypto-bn/rand.h"
 #include "exception/located_exception.h"
 #include "crypto-sss/vsss.h"
+#include "crypto-hash/hash256.h"
 #include "common.h"
 #include "RSASigShareProof.h"
 
 using safeheron::bignum::BN;
 using safeheron::exception::LocatedException;
+using safeheron::hash::CSHA256;
 
 // Fermat fourth number
 // Default e value.
@@ -167,10 +169,10 @@ bool GenerateKey(size_t key_bits_length, int l, int k,
 }
 
 bool GenerateKeyEx(size_t key_bits_length, int l, int k,
-                 std::vector<RSAPrivateKeyShare> &private_key_share_arr,
-                 RSAPublicKey &public_key,
-                 RSAKeyMeta &key_meta,
-                 const KeyGenParam &_param){
+                   const KeyGenParam &_param,
+                   std::vector<RSAPrivateKeyShare> &private_key_share_arr,
+                   RSAPublicKey &public_key,
+                   RSAKeyMeta &key_meta){
     size_t key_bytes = key_bits_length / 8;
 
     // check k, l
@@ -311,6 +313,27 @@ bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
     }
     out_sig = y;
     return true;
+}
+
+bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
+                       const uint8_t *m, size_t len,
+                       const RSAPublicKey &public_key,
+                       const RSAKeyMeta &key_meta,
+                       safeheron::bignum::BN &out_sig){
+    uint8_t digest[CSHA256::OUTPUT_SIZE];
+    CSHA256 sha256;
+    sha256.Write((uint8_t *)m, len);
+    sha256.Finalize(digest);
+    BN x = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
+    return CombineSignatures(sig_arr, x, public_key, key_meta, out_sig);
+}
+
+bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
+                       const std::string &m,
+                       const RSAPublicKey &public_key,
+                       const RSAKeyMeta &key_meta,
+                       safeheron::bignum::BN &out_sig){
+    return CombineSignatures(sig_arr, (const uint8_t*)m.c_str(), m.length(), public_key, key_meta, out_sig);
 }
 
 };

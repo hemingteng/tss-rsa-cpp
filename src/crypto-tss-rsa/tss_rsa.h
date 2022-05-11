@@ -21,15 +21,28 @@ bool GenerateKey(size_t key_bits_length, int l, int k,
                  RSAKeyMeta &key_meta);
 
 bool GenerateKeyEx(size_t key_bits_length, int l, int k,
-                 std::vector<RSAPrivateKeyShare> &private_key_share_arr,
-                 RSAPublicKey &public_key,
-                 RSAKeyMeta &key_meta, const KeyGenParam &param);
+                   const KeyGenParam &param,
+                   std::vector<RSAPrivateKeyShare> &private_key_share_arr,
+                   RSAPublicKey &public_key,
+                   RSAKeyMeta &key_meta);
 
 bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
-                       const safeheron::bignum::BN &m,
+                       const uint8_t *m, size_t len,
                        const RSAPublicKey &public_key,
                        const RSAKeyMeta &key_meta,
                        safeheron::bignum::BN &out_sig);
+
+bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
+                       const std::string &m,
+                       const RSAPublicKey &public_key,
+                       const RSAKeyMeta &key_meta,
+                       safeheron::bignum::BN &out_sig);
+
+bool InternalCombineSignatures(const std::vector<RSASigShare> &sig_arr,
+                               const safeheron::bignum::BN &x,
+                               const RSAPublicKey &public_key,
+                               const RSAKeyMeta &key_meta,
+                               safeheron::bignum::BN &out_sig);
 
 };
 };

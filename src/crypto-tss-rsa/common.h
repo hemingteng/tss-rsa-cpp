@@ -8,10 +8,10 @@
 namespace safeheron {
 namespace tss_rsa{
 
-static safeheron::bignum::BN lambda(const safeheron::bignum::BN &i,
-                                    const safeheron::bignum::BN &j,
-                                    const std::vector<safeheron::bignum::BN> &S,
-                                    const safeheron::bignum::BN &delta){
+static inline safeheron::bignum::BN lambda(const safeheron::bignum::BN &i,
+                                           const safeheron::bignum::BN &j,
+                                           const std::vector<safeheron::bignum::BN> &S,
+                                           const safeheron::bignum::BN &delta){
     safeheron::bignum::BN num(1);
     safeheron::bignum::BN den(1);
     for(const auto &item : S){

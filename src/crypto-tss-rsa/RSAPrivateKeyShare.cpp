@@ -4,6 +4,7 @@
 #include "common.h"
 #include <google/protobuf/util/json_util.h>
 #include "crypto-encode/base64.h"
+#include "crypto-hash/hash256.h"
 
 using std::string;
 using google::protobuf::util::Status;
@@ -12,6 +13,7 @@ using google::protobuf::util::JsonStringToMessage;
 using google::protobuf::util::JsonPrintOptions;
 using google::protobuf::util::JsonParseOptions;
 using safeheron::bignum::BN;
+using safeheron::hash::CSHA256;
 
 namespace safeheron {
 namespace tss_rsa{
@@ -38,14 +40,13 @@ void RSAPrivateKeyShare::set_i(int i) {
     i_ = i;
 }
 
-RSASigShare RSAPrivateKeyShare::Sign(const safeheron::bignum::BN &m,
-                                     const safeheron::tss_rsa::RSAKeyMeta &key_meta,
-                                     const safeheron::tss_rsa::RSAPublicKey &public_key){
-    // x = m    , if (m, n) == 1
-    // x = m*u^e, if (m, n) == -1
-    BN x = m;
+RSASigShare RSAPrivateKeyShare::InternalSign(const safeheron::bignum::BN &_x,
+                                             const safeheron::tss_rsa::RSAKeyMeta &key_meta,
+                                             const safeheron::tss_rsa::RSAPublicKey &public_key){
+    // x = x*u^e, if (m, n) == -1
+    BN x = _x;
     std::cout << "x: " << x.Inspect() << std::endl;
-    if(BN::JacobiSymbol(m, public_key.n()) == -1){
+    if(BN::JacobiSymbol(x, public_key.n()) == -1){
         x = (x * key_meta.vku().PowM(public_key.e(), public_key.n())) % public_key.n();
         std::cout << "JacobiSymbol == 1" << std::endl;
     }
@@ -60,6 +61,22 @@ RSASigShare RSAPrivateKeyShare::Sign(const safeheron::bignum::BN &m,
     return {i_, xi, proof.z(), proof.c()};
 }
 
+RSASigShare RSAPrivateKeyShare::Sign(const uint8_t *msg, size_t msg_len,
+                                     const safeheron::tss_rsa::RSAKeyMeta &key_meta,
+                                     const safeheron::tss_rsa::RSAPublicKey &public_key){
+    uint8_t digest[CSHA256::OUTPUT_SIZE];
+    CSHA256 sha256;
+    sha256.Write((uint8_t *)msg, msg_len);
+    sha256.Finalize(digest);
+    BN x = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
+    return InternalSign(x, key_meta, public_key);
+}
+
+RSASigShare RSAPrivateKeyShare::Sign(const std::string &msg,
+                                     const safeheron::tss_rsa::RSAKeyMeta &key_meta,
+                                     const safeheron::tss_rsa::RSAPublicKey &public_key){
+    return Sign((const uint8_t *)msg.c_str(), msg.length(), key_meta, public_key);
+}
 
 bool RSAPrivateKeyShare::ToProtoObject(proto::RSAPrivateKeyShare &proof) const {
     bool ok = true;
