@@ -28,17 +28,9 @@ public:
     int i() const;
     void set_i(int i);
 
-    RSASigShare Sign(const uint8_t *msg, size_t msg_len,
+    RSASigShare Sign(const std::string &doc,
                      const safeheron::tss_rsa::RSAKeyMeta &key_meta,
                      const safeheron::tss_rsa::RSAPublicKey &public_key);
-
-    RSASigShare Sign(const std::string &msg,
-                     const safeheron::tss_rsa::RSAKeyMeta &key_meta,
-                     const safeheron::tss_rsa::RSAPublicKey &public_key);
-
-    RSASigShare InternalSign(const safeheron::bignum::BN &x,
-                             const safeheron::tss_rsa::RSAKeyMeta &key_meta,
-                             const safeheron::tss_rsa::RSAPublicKey &public_key);
 
     bool ToProtoObject(safeheron::proto::RSAPrivateKeyShare &proof) const;
     bool FromProtoObject(const safeheron::proto::RSAPrivateKeyShare &proof);
@@ -50,6 +42,9 @@ public:
     bool FromJsonString(const std::string &json_str);
 
 private:
+    RSASigShare InternalSign(const safeheron::bignum::BN &x,
+                             const safeheron::tss_rsa::RSAKeyMeta &key_meta,
+                             const safeheron::tss_rsa::RSAPublicKey &public_key);
 
 private:
     int i_;

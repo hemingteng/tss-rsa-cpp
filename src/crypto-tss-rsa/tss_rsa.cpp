@@ -108,6 +108,17 @@ static bool InternalGenerateKey(size_t key_bits_length, int l, int k,
 }
 
 
+/**
+ * Generate private key shares, public key, key meta data.
+ *
+ * @param key_bits_length: 2048, 3072, 4096 is advised.
+ * @param l: total number of private key shares.
+ * @param k: threshold, k < l and k >= (l/2+1)
+ * @param private_key_share_arr[out]: shares of private key.
+ * @param public_key[out]: public key.
+ * @param key_meta[out]: key meta data.
+ * @return
+ */
 bool GenerateKey(size_t key_bits_length, int l, int k,
                  std::vector<RSAPrivateKeyShare> &private_key_share_arr,
                  RSAPublicKey &public_key,
@@ -139,6 +150,19 @@ bool GenerateKey(size_t key_bits_length, int l, int k,
     return InternalGenerateKey(key_bits_length, l, k, private_key_share_arr, public_key, key_meta, param);
 }
 
+
+/**
+ * Generate private key shares, public key, key meta data with specified parameters.
+ *
+ * @param key_bits_length: 2048, 3072, 4096 is advised.
+ * @param l: total number of private key shares.
+ * @param k: threshold, k < l and k >= (l/2+1)
+ * @param param: specified parameters.
+ * @param private_key_share_arr[out]: shares of private key.
+ * @param public_key[out]: public key.
+ * @param key_meta[out]: key meta data.
+ * @return
+ */
 bool GenerateKeyEx(size_t key_bits_length, int l, int k,
                    const KeyGenParam &_param,
                    std::vector<RSAPrivateKeyShare> &private_key_share_arr,
@@ -220,18 +244,27 @@ bool GenerateKeyEx(size_t key_bits_length, int l, int k,
 }
 
 
-bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
-                       const safeheron::bignum::BN &m,
-                       const RSAPublicKey &public_key,
-                       const RSAKeyMeta &key_meta,
-                       safeheron::bignum::BN &out_sig){
+/**
+ * Combine all the shares of signature to make a real signature.
+ * @param x: a big number related to prepared hash
+ * @param sig_arr : the shares of signature.
+ * @param public_key: public key.
+ * @param key_meta: key meta data.
+ * @param out_sig[out]: a real signature.
+ * @return
+ */
+bool InternalCombineSignatures(const safeheron::bignum::BN &_x,
+                               const std::vector<RSASigShare> &sig_arr,
+                               const RSAPublicKey &public_key,
+                               const RSAKeyMeta &key_meta,
+                               safeheron::bignum::BN &out_sig){
     // e' is always set to 4.
     BN ep(4);
 
     // x = m    , if (m, n) == 1
     // x = m*u^e, if (m, n) == -1
-    BN x = m;
-    int jacobi_m_n = BN::JacobiSymbol(m, public_key.n());
+    BN x = _x;
+    int jacobi_m_n = BN::JacobiSymbol(x, public_key.n());
     if( jacobi_m_n == -1){
         x = (x * key_meta.vku().PowM(public_key.e(), public_key.n())) % public_key.n();
     }
@@ -274,25 +307,22 @@ bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
     return true;
 }
 
-bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
-                       const uint8_t *m, size_t len,
+/**
+ * Combine all the shares of signature to make a real signature.
+ * @param doc: doc
+ * @param sig_arr : the shares of signature.
+ * @param public_key: public key.
+ * @param key_meta: key meta data.
+ * @param out_sig[out]: a real signature.
+ * @return
+ */
+bool CombineSignatures(const std::string &doc,
+                       const std::vector<RSASigShare> &sig_arr,
                        const RSAPublicKey &public_key,
                        const RSAKeyMeta &key_meta,
                        safeheron::bignum::BN &out_sig){
-    uint8_t digest[CSHA256::OUTPUT_SIZE];
-    CSHA256 sha256;
-    sha256.Write((uint8_t *)m, len);
-    sha256.Finalize(digest);
-    BN x = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
-    return CombineSignatures(sig_arr, x, public_key, key_meta, out_sig);
-}
-
-bool CombineSignatures(const std::vector<RSASigShare> &sig_arr,
-                       const std::string &m,
-                       const RSAPublicKey &public_key,
-                       const RSAKeyMeta &key_meta,
-                       safeheron::bignum::BN &out_sig){
-    return CombineSignatures(sig_arr, (const uint8_t*)m.c_str(), m.length(), public_key, key_meta, out_sig);
+    BN x = BN::FromBytesBE(doc);
+    return InternalCombineSignatures(x, sig_arr, public_key, key_meta, out_sig);
 }
 
 };

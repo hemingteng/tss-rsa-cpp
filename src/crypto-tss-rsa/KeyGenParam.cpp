@@ -13,6 +13,14 @@ KeyGenParam::KeyGenParam(){
     vku_ = BN::ZERO;
 }
 
+/**
+ * Constructor
+ * @param e : 65537 default.
+ * @param p : safe prime.
+ * @param q : safe prime.
+ * @param f : f \in Z_n^*, then f^2 \in Q_n, where n = pq
+ * @param vku: vku \in Z_n^*, Jacobi(vku, n) = -1, where n = pq
+ */
 KeyGenParam::KeyGenParam(int e,
                          const safeheron::bignum::BN &p,
                          const safeheron::bignum::BN &q,

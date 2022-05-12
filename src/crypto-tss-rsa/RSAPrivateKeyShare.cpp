@@ -59,21 +59,11 @@ RSASigShare RSAPrivateKeyShare::InternalSign(const safeheron::bignum::BN &_x,
     return {i_, xi, proof.z(), proof.c()};
 }
 
-RSASigShare RSAPrivateKeyShare::Sign(const uint8_t *msg, size_t msg_len,
+RSASigShare RSAPrivateKeyShare::Sign(const std::string &doc,
                                      const safeheron::tss_rsa::RSAKeyMeta &key_meta,
                                      const safeheron::tss_rsa::RSAPublicKey &public_key){
-    uint8_t digest[CSHA256::OUTPUT_SIZE];
-    CSHA256 sha256;
-    sha256.Write((uint8_t *)msg, msg_len);
-    sha256.Finalize(digest);
-    BN x = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
+    BN x = BN::FromBytesBE(doc);
     return InternalSign(x, key_meta, public_key);
-}
-
-RSASigShare RSAPrivateKeyShare::Sign(const std::string &msg,
-                                     const safeheron::tss_rsa::RSAKeyMeta &key_meta,
-                                     const safeheron::tss_rsa::RSAPublicKey &public_key){
-    return Sign((const uint8_t *)msg.c_str(), msg.length(), key_meta, public_key);
 }
 
 bool RSAPrivateKeyShare::ToProtoObject(proto::RSAPrivateKeyShare &proof) const {

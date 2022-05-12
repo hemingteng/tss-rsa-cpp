@@ -35,21 +35,14 @@ RSAPublicKey::RSAPublicKey(const safeheron::bignum::BN &n, const safeheron::bign
     this->e_ = e;
 }
 
-bool RSAPublicKey::InternalVerifySignature(const safeheron::bignum::BN &x, const safeheron::bignum::BN &y){
-    return y.PowM(e_, n_) == x;
+bool RSAPublicKey::InternalVerifySignature(const safeheron::bignum::BN &x, const safeheron::bignum::BN &sig) {
+    // check y^e mod n = x, where y = sig
+    return sig.PowM(e_, n_) == x;
 }
 
-bool RSAPublicKey::VerifySignature(const uint8_t *msg, size_t msg_len, const safeheron::bignum::BN &sig){
-    uint8_t digest[CSHA256::OUTPUT_SIZE];
-    CSHA256 sha256;
-    sha256.Write((uint8_t *)msg, msg_len);
-    sha256.Finalize(digest);
-    BN x = BN::FromBytesBE(digest, CSHA256::OUTPUT_SIZE);
+bool RSAPublicKey::VerifySignature(const string &doc, const safeheron::bignum::BN &sig){
+    BN x = BN::FromBytesBE(doc);
     return InternalVerifySignature(x, sig);
-}
-
-bool RSAPublicKey::VerifySignature(const std::string &msg, const safeheron::bignum::BN &sig){
-    return VerifySignature((const uint8_t* )msg.c_str(), msg.length(), sig);
 }
 
 const bignum::BN &RSAPublicKey::n() const {

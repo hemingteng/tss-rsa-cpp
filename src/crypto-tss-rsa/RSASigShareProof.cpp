@@ -29,7 +29,7 @@ using safeheron::hash::CSHA256;
 namespace safeheron {
 namespace tss_rsa{
 
-// Output of SHA256 is 256
+// Output length of SHA256 is 256
 static int L1 = 256;
 
 RSASigShareProof::RSASigShareProof() : z_(bignum::BN::ZERO), c_(bignum::BN::ZERO) {}
