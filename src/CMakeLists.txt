@@ -1,9 +1,7 @@
 find_package(PkgConfig REQUIRED)
 #set(OPENSSL_USE_STATIC_LIBS TRUE)
 find_package(OpenSSL REQUIRED)
-find_package(CryptoBN REQUIRED)
-find_package(CryptoSSS REQUIRED)
-find_package(CryptoHash REQUIRED)
+find_package(CryptoSuites REQUIRED)
 
 add_library(${CMAKE_PROJECT_NAME} SHARED
         crypto-tss-rsa/RSAPrivateKeyShare.cpp
@@ -17,16 +15,12 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-        ${CryptoBN_INCLUDE_DIRS}
-        ${CryptoSSS_INCLUDE_DIRS}
-        ${CryptoHash_INCLUDE_DIRS}
+        ${CryptoSuites_INCLUDE_DIRS}
         ${OPENSSL_INCLUDE_DIR}
         )
 
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME}
-        CryptoBN
-        CryptoSSS
-        CryptoHash
+        CryptoSuites
         OpenSSL::Crypto
         -ldl
         )

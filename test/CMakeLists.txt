@@ -1,7 +1,9 @@
 find_package(GTest REQUIRED)
+find_package(CryptoSuites REQUIRED)
 
 add_executable(tss-rsa-test tss-rsa-test.cpp)
 target_include_directories(tss-rsa-test PRIVATE
+        ${CryptoSuites_INCLUDE_DIRS}
         "../src"
         ${GTEST_INCLUDE_DIRS})
 target_link_libraries(tss-rsa-test
