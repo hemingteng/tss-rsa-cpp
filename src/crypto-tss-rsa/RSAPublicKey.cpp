@@ -1,6 +1,12 @@
-//
-// Created by 何剑虹 on 2020/8/31.
-//
+/*
+ * Copyright 2020-2022 Safeheron Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.safeheron.com/opensource/license.html
+ */
+
 
 #include "RSAPublicKey.h"
 #include <cassert>

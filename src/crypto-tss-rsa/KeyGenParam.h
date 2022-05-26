@@ -1,6 +1,11 @@
-//
-// Created by 何剑虹 on 2020/8/31.
-//
+/*
+ * Copyright 2020-2022 Safeheron Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.safeheron.com/opensource/license.html
+ */
 
 #ifndef SAFEHERON_TSS_RSA_KEY_GEN_PARAM_SHARE_H
 #define SAFEHERON_TSS_RSA_KEY_GEN_PARAM_SHARE_H
@@ -51,11 +56,11 @@ public:
     void set_vku(const bignum::BN &vku);
 
 private:
-    int e_;
-    safeheron::bignum::BN p_;
-    safeheron::bignum::BN q_;
-    safeheron::bignum::BN f_;
-    safeheron::bignum::BN vku_;
+    int e_;  /**< 65537 default */
+    safeheron::bignum::BN p_;  /**< safe prime. */
+    safeheron::bignum::BN q_;  /**< safe prime. */
+    safeheron::bignum::BN f_;  /**< f \in Z_n^*, then f^2 \in Q_n */
+    safeheron::bignum::BN vku_;  /**< vku \in Z_n^*, Jacobi(vku, n) = -1, where n = pq */
 };
 
 };

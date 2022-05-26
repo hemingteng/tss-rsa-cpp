@@ -1,6 +1,11 @@
-//
-// Created by 何剑虹 on 2020/8/31.
-//
+/*
+ * Copyright 2020-2022 Safeheron Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.safeheron.com/opensource/license.html
+ */
 
 #ifndef SAFEHERON_RSA_KEY_SHARE_H
 #define SAFEHERON_RSA_KEY_SHARE_H
@@ -15,7 +20,18 @@ namespace tss_rsa{
 
 class RSASigShare{
 public:
+    /**
+     * Constructor.
+     */
     RSASigShare();
+
+    /**
+     * Constructor.
+     * @param index index of party
+     * @param sig_share signature share
+     * @param z a parameter of the proof
+     * @param c a parameter of the proof
+     */
     RSASigShare(int index,
                 const safeheron::bignum::BN &sig_share,
                 const safeheron::bignum::BN &z,
@@ -42,10 +58,10 @@ public:
     bool ToJsonString(std::string &json_str) const;
     bool FromJsonString(const std::string &json_str);
 private:
-    int index_;
-    safeheron::bignum::BN sig_share_;
-    safeheron::bignum::BN z_;
-    safeheron::bignum::BN c_;
+    int index_;  /**< index of party */
+    safeheron::bignum::BN sig_share_;  /**< signature share */
+    safeheron::bignum::BN z_;  /**< a parameter of the proof */
+    safeheron::bignum::BN c_;  /**< a parameter of the proof */
 };
 
 };

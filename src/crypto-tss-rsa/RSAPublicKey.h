@@ -1,6 +1,11 @@
-//
-// Created by 何剑虹 on 2020/8/31.
-//
+/*
+ * Copyright 2020-2022 Safeheron Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.safeheron.com/opensource/license.html
+ */
 
 #ifndef SAFEHERON_RSA_PUBLIC_KEY_H
 #define SAFEHERON_RSA_PUBLIC_KEY_H
@@ -16,9 +21,24 @@ namespace tss_rsa{
 
 class RSAPublicKey{
 public:
+    /**
+     * Constructor.
+     */
     RSAPublicKey(){}
+
+    /**
+     * Constructor.
+     * @param n n=pq
+     * @param e a prime
+     */
     RSAPublicKey(const safeheron::bignum::BN &n, const safeheron::bignum::BN &e);
 
+    /**
+     * Verify the signature.
+     * @param doc
+     * @param sig
+     * @return true on success, false on error.
+     */
     bool VerifySignature(const std::string &doc, const safeheron::bignum::BN &sig);
 
     const bignum::BN &n() const;
@@ -37,6 +57,12 @@ public:
     bool FromJsonString(const std::string &json_str);
 
 private:
+    /**
+     * Verify the signature.
+     * @param x
+     * @param sig
+     * @return true on success, false on error.
+     */
     bool InternalVerifySignature(const safeheron::bignum::BN &x, const safeheron::bignum::BN &sig);
 private:
     safeheron::bignum::BN n_;

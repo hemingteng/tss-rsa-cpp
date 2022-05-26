@@ -1,6 +1,11 @@
-//
-// Created by 何剑虹 on 2020/8/31.
-//
+/*
+ * Copyright 2020-2022 Safeheron Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.safeheron.com/opensource/license.html
+ */
 
 #ifndef SAFEHERON_RSA_SIGNATURE_SHARE_PROOF_H
 #define SAFEHERON_RSA_SIGNATURE_SHARE_PROOF_H
@@ -15,8 +20,16 @@ namespace tss_rsa{
 
 class RSASigShareProof{
 public:
+    /**
+     * Constructor.
+     */
     RSASigShareProof();
 
+    /**
+     * Constructor.
+     * @param z a parameter of the proof
+     * @param c a parameter of the proof
+     */
     RSASigShareProof(const bignum::BN &z, const bignum::BN &c);
 
     const bignum::BN &z() const;
@@ -27,6 +40,15 @@ public:
 
     void set_c(const bignum::BN &c);
 
+    /**
+     * Create a proof of the signature share.
+     * @param si secret share of party i
+     * @param vkv validation key
+     * @param vki validation key of party i
+     * @param x x which represents the message
+     * @param n n = pq
+     * @param sig_i signature share of party i
+     */
     void Prove(const safeheron::bignum::BN &si,
                const safeheron::bignum::BN &vkv,
                const safeheron::bignum::BN &vki,
@@ -34,6 +56,15 @@ public:
                const safeheron::bignum::BN &n,
                const safeheron::bignum::BN &sig_i);
 
+    /**
+     * Verify the proof of the signature share.
+     * @param vkv validation key
+     * @param vki validation key of party i
+     * @param x x which represents the message
+     * @param n n = pq
+     * @param sig_i signature share of party i
+     * @return true on success, false on error.
+     */
     bool Verify(const safeheron::bignum::BN &vkv,
                 const safeheron::bignum::BN &vki,
                 const safeheron::bignum::BN &x,

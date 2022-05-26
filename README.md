@@ -74,7 +74,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 
 It's an example where the key length is 1024, the number of parties is 3 and threshold is 2.
 ```c++
-#include "gtest/gtest.h"
 #include "crypto-bn/bn.h"
 #include "crypto-bn/rand.h"
 #include "exception/safeheron_exceptions.h"
@@ -91,7 +90,7 @@ using safeheron::exception::OpensslException;
 using safeheron::exception::BadAllocException;
 using safeheron::exception::RandomSourceException;
 
-TEST(BN, KeyGen2_3_Sign_3_3) {
+int main(int argc, char **argv) {
     std::string json_str;
     std::string doc("12345678123456781234567812345678");
 
@@ -103,7 +102,6 @@ TEST(BN, KeyGen2_3_Sign_3_3) {
     RSAPublicKey pub;
     RSAKeyMeta key_meta;
     bool status = safeheron::tss_rsa::GenerateKey(key_bits_length, l, k, priv_arr, pub, key_meta);
-    EXPECT_TRUE(status);
     key_meta.ToJsonString(json_str);
     std::cout << "key meta data: " << json_str << std::endl;
 
@@ -112,8 +110,6 @@ TEST(BN, KeyGen2_3_Sign_3_3) {
 
     priv_arr[0].ToJsonString(json_str);
     std::cout << "private key share 1: " << json_str << std::endl;
-    priv_arr[1].ToJsonString(json_str);
-    std::cout << "private key share 2: "  << json_str << std::endl;
     priv_arr[2].ToJsonString(json_str);
     std::cout << "private key share 3: "  << json_str << std::endl;
 
@@ -121,10 +117,6 @@ TEST(BN, KeyGen2_3_Sign_3_3) {
     RSASigShare sig_share0 = priv_arr[0].Sign(doc, key_meta, pub);
     sig_share0.ToJsonString(json_str);
     std::cout << "signature share 1: " << json_str << std::endl;
-    // Party 2 sign.
-    RSASigShare sig_share1 = priv_arr[1].Sign(doc, key_meta, pub);
-    sig_share1.ToJsonString(json_str);
-    std::cout << "signature share 2: " <<  json_str << std::endl;
     // Party 3 sign.
     RSASigShare sig_share2 = priv_arr[2].Sign(doc, key_meta, pub);
     sig_share2.ToJsonString(json_str);
@@ -134,43 +126,43 @@ TEST(BN, KeyGen2_3_Sign_3_3) {
     // Distributed signature
     std::vector<RSASigShare> sig_share_arr;
     sig_share_arr.push_back(sig_share0);
-    sig_share_arr.push_back(sig_share1);
     sig_share_arr.push_back(sig_share2);
     BN sig;
     status = safeheron::tss_rsa::CombineSignatures(doc, sig_share_arr, pub, key_meta, sig);
-    EXPECT_TRUE(status);
     std::cout << "final signature = 0x" << sig.Inspect() << std::endl;
 
     // Verify the final signature.
-    EXPECT_TRUE(pub.VerifySignature(doc, sig));
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    int ret = RUN_ALL_TESTS();
-    return ret;
+    std::cout<< "verify:" << pub.VerifySignature(doc, sig) << std::endl;
+    return 0;
 }
 ```
 
 Here is the CMakeList.txt:
 
 ```shell
-find_package(GTest REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_search_module(PROTOBUF REQUIRED protobuf)  # depend on pkg-config, this looks for opencv.pc file
+
+#set(OPENSSL_USE_STATIC_LIBS TRUE)
+find_package(OpenSSL REQUIRED)
 find_package(CryptoSuites REQUIRED)
 find_package(CryptoTSSRSA REQUIRED)
 
-add_executable(tss-rsa-test tss-rsa-test.cpp)
-target_include_directories(tss-rsa-test PRIVATE
-        ${CryptoSuites_INCLUDE_DIRS}
+add_executable(${PROJECT_NAME} example.cpp)
+target_include_directories(${PROJECT_NAME} PUBLIC
         ${CryptoTSSRSA_INCLUDE_DIRS}
-        ${GTEST_INCLUDE_DIRS})
-target_link_libraries(tss-rsa-test
+        ${CryptoSuites_INCLUDE_DIRS}
+        /usr/local/include
+        )
+
+target_link_directories(${PROJECT_NAME} PUBLIC
+        /usr/local/lib
+        )
+
+target_link_libraries(${PROJECT_NAME} PUBLIC
         CryptoSuites
         CryptoTSSRSA
-        ${GTEST_BOTH_LIBRARIES}
-        ${PROTOBUF_LIBRARY_DIRS}
         pthread )
-add_test(NAME tss-rsa-test COMMAND tss-rsa-test)
 ```
 
 Compile and run:

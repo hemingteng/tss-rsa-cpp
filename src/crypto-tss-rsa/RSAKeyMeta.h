@@ -1,6 +1,12 @@
-//
-// Created by 何剑虹 on 2020/8/31.
-//
+/*
+ * Copyright 2020-2022 Safeheron Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.safeheron.com/opensource/license.html
+ */
+
 
 #ifndef SAFEHERON_RSA_KEY_META_H
 #define SAFEHERON_RSA_KEY_META_H
@@ -15,7 +21,19 @@ namespace tss_rsa{
 
 class RSAKeyMeta{
 public:
+    /**
+     * Constructor.
+     */
     RSAKeyMeta(){}
+
+    /**
+     * Constructor.
+     * @param k threshold
+     * @param l number of parties
+     * @param vkv validation key
+     * @param vki_arr validation key array of all parties
+     * @param vku safe parameter for protocol 2
+     */
     RSAKeyMeta(int k,
                int l,
                const safeheron::bignum::BN &vkv,
@@ -47,11 +65,11 @@ public:
     bool ToJsonString(std::string &json_str) const;
     bool FromJsonString(const std::string &json_str);
 private:
-    int k_;
-    int l_;
-    safeheron::bignum::BN vkv_;
-    std::vector<safeheron::bignum::BN> vki_arr_;
-    safeheron::bignum::BN vku_;
+    int k_;  /**< threshold */
+    int l_;  /**< number of parties */
+    safeheron::bignum::BN vkv_;  /**< validation key */
+    std::vector<safeheron::bignum::BN> vki_arr_;  /**< validation key array of all parties */
+    safeheron::bignum::BN vku_;  /**< safe parameter for protocol 2 */
 
 };
 

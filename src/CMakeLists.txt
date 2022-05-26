@@ -17,7 +17,10 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         ${CryptoSuites_INCLUDE_DIRS}
         ${OPENSSL_INCLUDE_DIR}
+        /usr/local/include
         )
+
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE /usr/local/lib)
 
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME}
         CryptoSuites
