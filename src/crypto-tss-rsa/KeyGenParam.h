@@ -10,7 +10,6 @@
 #ifndef SAFEHERON_TSS_RSA_KEY_GEN_PARAM_SHARE_H
 #define SAFEHERON_TSS_RSA_KEY_GEN_PARAM_SHARE_H
 
-#include <iostream>
 #include <vector>
 #include "crypto-bn/bn.h"
 

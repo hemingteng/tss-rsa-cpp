@@ -29,7 +29,7 @@ namespace tss_rsa {
  * @param private_key_share_arr[out]: shares of private key.
  * @param public_key[out]: public key.
  * @param key_meta[out]: key meta data.
- * @return
+ * @return true on success, false on error.
  */
 bool GenerateKey(size_t key_bits_length, int l, int k,
                  std::vector<RSAPrivateKeyShare> &private_key_share_arr,
@@ -46,7 +46,7 @@ bool GenerateKey(size_t key_bits_length, int l, int k,
  * @param private_key_share_arr[out]: shares of private key.
  * @param public_key[out]: public key.
  * @param key_meta[out]: key meta data.
- * @return
+ * @return true on success, false on error.
  */
 bool GenerateKeyEx(size_t key_bits_length, int l, int k,
                    const KeyGenParam &param,
@@ -61,7 +61,7 @@ bool GenerateKeyEx(size_t key_bits_length, int l, int k,
  * @param public_key: public key.
  * @param key_meta: key meta data.
  * @param out_sig[out]: a real signature.
- * @return
+ * @return true on success, false on error.
  */
 bool CombineSignatures(const std::string &doc,
                        const std::vector<RSASigShare> &sig_arr,

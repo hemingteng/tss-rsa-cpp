@@ -10,7 +10,6 @@
 #ifndef SAFEHERON_TSS_RSA_COMMON_H
 #define SAFEHERON_TSS_RSA_COMMON_H
 
-#include <iostream>
 #include <vector>
 #include "crypto-bn/bn.h"
 

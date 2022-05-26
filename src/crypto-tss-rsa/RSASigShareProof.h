@@ -10,7 +10,6 @@
 #ifndef SAFEHERON_RSA_SIGNATURE_SHARE_PROOF_H
 #define SAFEHERON_RSA_SIGNATURE_SHARE_PROOF_H
 
-#include <iostream>
 #include "crypto-bn/bn.h"
 #include "tss_rsa.pb.h"
 

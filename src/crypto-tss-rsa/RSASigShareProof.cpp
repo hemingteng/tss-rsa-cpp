@@ -9,9 +9,6 @@
 
 #include "RSASigShareProof.h"
 #include <cassert>
-#include <cstring>
-#include <sstream>
-#include <string>
 #include <google/protobuf/util/json_util.h>
 #include "exception/safeheron_exceptions.h"
 #include "crypto-bn/rand.h"

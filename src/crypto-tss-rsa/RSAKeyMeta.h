@@ -11,7 +11,6 @@
 #ifndef SAFEHERON_RSA_KEY_META_H
 #define SAFEHERON_RSA_KEY_META_H
 
-#include <iostream>
 #include <vector>
 #include "crypto-bn/bn.h"
 #include "tss_rsa.pb.h"

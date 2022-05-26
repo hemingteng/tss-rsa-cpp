@@ -10,7 +10,6 @@
 #ifndef SAFEHERON_RSA_PUBLIC_KEY_H
 #define SAFEHERON_RSA_PUBLIC_KEY_H
 
-#include <iostream>
 #include "crypto-bn/bn.h"
 #include "tss_rsa.pb.h"
 
