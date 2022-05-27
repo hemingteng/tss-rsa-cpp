@@ -55,6 +55,7 @@ static bool InternalGenerateKey(size_t key_bits_length, int l, int k,
     sss::vsss::MakeShares(share_arr, d, k, index_arr, m);
     BN secret;
     sss::vsss::RecoverSecret(secret, share_arr, m);
+    // extra check: d == secret
 
 
     // Compute \Delta = l!
@@ -90,25 +91,6 @@ static bool InternalGenerateKey(size_t key_bits_length, int l, int k,
     key_meta.set_vki_arr(vki_arr);
     key_meta.set_vku(vku);
 
-
-    // S is a subset of (1, ... ,l)
-    std::vector<BN> S;
-    for(int i = 1; i <= l; i++){
-        S.emplace_back(BN(i));
-    }
-
-    BN lambda1 = lambda(BN::ZERO, BN(1), S, delta);
-    BN lambda2 = lambda(BN::ZERO, BN(2), S, delta);
-    BN lambda3 = lambda(BN::ZERO, BN(3), S, delta);
-    BN dd = (private_key_share_arr[0].si() * lambda1 + private_key_share_arr[1].si() * lambda2 + private_key_share_arr[2].si() * lambda3) % m;
-
-    BN d_delta = (share_arr[0].y * lambda1 + share_arr[1].y * lambda2 + share_arr[2].y * lambda3) % m;
-    BN expected_d_delta = (d * delta) % m;
-
-    BN exp = (private_key_share_arr[0].si() * lambda1 + private_key_share_arr[1].si() * lambda2 + private_key_share_arr[2].si() * lambda3) * 4;
-    //exp = exp % n;
-    BN some = m.PowM(exp, n);
-
     return true;
 }
 
@@ -128,6 +110,11 @@ bool GenerateKey(size_t key_bits_length, int l, int k,
                  std::vector<RSAPrivateKeyShare> &private_key_share_arr,
                  RSAPublicKey &public_key,
                  RSAKeyMeta &key_meta){
+    // check k, l
+    if(l <= 1 || k <= 0 || k < (l/2+1) || k > l){
+        return false;
+    }
+
     // default value
     int e = f4;
 
@@ -159,7 +146,7 @@ bool GenerateKey(size_t key_bits_length, int l, int k,
 /**
  * Generate private key shares, public key, key meta data with specified parameters.
  *
- * @param key_bits_length: 2048, 3072, 4096 is advised.
+ * @param key_bits_length: 2048, 3072, 4096 are suggested.
  * @param l: total number of private key shares.
  * @param k: threshold, k < l and k >= (l/2+1)
  * @param param: specified parameters.
