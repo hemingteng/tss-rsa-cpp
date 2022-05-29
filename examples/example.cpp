@@ -1,5 +1,4 @@
 #include "crypto-bn/bn.h"
-#include "crypto-bn/rand.h"
 #include "exception/safeheron_exceptions.h"
 #include "crypto-tss-rsa/tss_rsa.h"
 

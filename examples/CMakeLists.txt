@@ -16,14 +16,13 @@ find_package(CryptoTSSRSA REQUIRED)
 
 add_executable(${PROJECT_NAME} example.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC
-        ${CryptoTSSRSA_INCLUDE_DIRS}
         ${CryptoSuites_INCLUDE_DIRS}
-        /usr/local/include
+        ${CryptoTSSRSA_INCLUDE_DIRS}
+        /usr/local/include  # This directory is included default on linux but not on Mac os
         )
 
-target_link_directories(${PROJECT_NAME} PUBLIC
-        /usr/local/lib
-        )
+# This directory is included default on linux but not on Mac os
+target_link_directories(${PROJECT_NAME} PUBLIC /usr/local/lib)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
         CryptoSuites

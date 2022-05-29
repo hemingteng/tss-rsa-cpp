@@ -75,7 +75,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 It's an example where the key length is 1024, the number of parties is 3 and threshold is 2.
 ```c++
 #include "crypto-bn/bn.h"
-#include "crypto-bn/rand.h"
 #include "exception/safeheron_exceptions.h"
 #include "crypto-tss-rsa/tss_rsa.h"
 
@@ -150,14 +149,13 @@ find_package(CryptoTSSRSA REQUIRED)
 
 add_executable(${PROJECT_NAME} example.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC
-        ${CryptoTSSRSA_INCLUDE_DIRS}
         ${CryptoSuites_INCLUDE_DIRS}
-        /usr/local/include
+        ${CryptoTSSRSA_INCLUDE_DIRS}
+        /usr/local/include  # This directory is included default on linux but not on Mac os
         )
 
-target_link_directories(${PROJECT_NAME} PUBLIC
-        /usr/local/lib
-        )
+# This directory is included default on linux but not on Mac os
+target_link_directories(${PROJECT_NAME} PUBLIC /usr/local/lib)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
         CryptoSuites
