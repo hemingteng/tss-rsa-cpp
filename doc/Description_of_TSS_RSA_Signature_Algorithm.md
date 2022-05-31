@@ -9,8 +9,8 @@ Refer to [Practical Threshold Signatures](https://www.iacr.org/archive/eurocrypt
 
 # 1 Key Generation By a Trusted Dealer
 
-- Simple $p \in_{R} \{0,1\}^*$, $p$ is a prime. $\exist p', p = 2p'+1$, and $p'$ is a prime too.
-- Simple $q \in_{R} \{0,1\}^*$, $q$ is a prime. $\exist q', q = 2q'+1$, and $q'$ is a prime too.
+- Simple $p \in_{R} \{0,1\}^*$, $p$ is a prime. $\exists p', p = 2p'+1$, and $p'$ is a prime too.
+- Simple $q \in_{R} \{0,1\}^*$, $q$ is a prime. $\exists q', q = 2q'+1$, and $q'$ is a prime too.
 - Compute $n=pq$
 - Compute $m=p'q'$
 - Sample $e \in_R \{0,1\}^*$, make sure $e >l$ and $e$ is a prime.
@@ -45,12 +45,14 @@ Refer to [Practical Threshold Signatures](https://www.iacr.org/archive/eurocrypt
 Let $\hat{x}=H(M)$ where M is the message.
 
 (Protocol2): Compute the x
+
 $$
-x = \left\{\begin{matrix}
-\hat{x}     & if (\hat{x}, n) = 1 \\
-\hat{x} u^e & if (\hat{x}, n) = -1
-\end{matrix}\right.
+x = \begin{cases}
+\hat{x}     & \text{ if } (\hat{x}, n) = 1 \\
+\hat{x} u^e & \text{ if } (\hat{x}, n) = -1
+\end{cases}
 $$
+
 The signature share of play i consists of
 $$
 x_i = x^{2s_i} \pmod n \\
@@ -75,7 +77,7 @@ where the set $S = \{i_1, \dots, i_k\} \subset \{1, \dots, l\}$.
 
 We compute $e' = 4$ instead of $e' = 4 \Delta^2$ (Deprecated in protocol2).
 
-Note that $gcd(e', e) = 1$, so $\exist (a, b), st. e'a + eb = 1$.
+Note that $gcd(e', e) = 1$, so $\exists (a, b), st. e'a + eb = 1$.
 
 We compute $a$ and $b$. The number $a$ and $b$ can be obtained from the extended Euclidean algorithm on $e$ and $e'$.
 

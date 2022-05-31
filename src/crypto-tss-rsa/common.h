@@ -26,11 +26,11 @@ namespace tss_rsa{
  *              { {\textstyle \prod_{j' \in S \setminus \{j\}}^{}(i-j')} }
  *              { {\textstyle \prod_{j' \in S \setminus \{j\}}^{}(j-j')} }
  * $$
- * @param i
- * @param j
- * @param S
- * @param delta delta=l!
- * @return
+ * @param[in] i
+ * @param[in] j
+ * @param[in] S
+ * @param[in] delta delta=l!
+ * @return  $\lambda_{i,j}$
  */
 static inline safeheron::bignum::BN lambda(const safeheron::bignum::BN &i,
                                            const safeheron::bignum::BN &j,

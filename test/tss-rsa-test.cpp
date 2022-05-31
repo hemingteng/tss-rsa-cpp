@@ -20,7 +20,7 @@ TEST(BN, KeyGen2_3_Sign_3_3) {
     std::string doc("12345678123456781234567812345678");
 
     // Key Generation
-    int key_bits_length = 1024;
+    int key_bits_length = 4096;
     int k = 2;
     int l = 3;
     std::vector<RSAPrivateKeyShare> priv_arr;

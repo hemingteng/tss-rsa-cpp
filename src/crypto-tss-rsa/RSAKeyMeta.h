@@ -27,11 +27,11 @@ public:
 
     /**
      * Constructor.
-     * @param k threshold
-     * @param l number of parties
-     * @param vkv validation key
-     * @param vki_arr validation key array of all parties
-     * @param vku safe parameter for protocol 2
+     * @param[in] k threshold
+     * @param[in] l number of parties
+     * @param[in] vkv validation key
+     * @param[in] vki_arr validation key array of all parties
+     * @param[in] vku safe parameter for protocol 2
      */
     RSAKeyMeta(int k,
                int l,
@@ -55,13 +55,46 @@ public:
     const bignum::BN &vku() const;
     void set_vku(const bignum::BN &vku);
 
+    /**
+     * Convert this object into a protobuf object.
+     * @param[out] proof
+     * @return true on success, false on error.
+     */
     bool ToProtoObject(safeheron::proto::RSAKeyMeta &proof) const;
+
+    /**
+     * Convert a protobuf object into this object.
+     * @param[in] proof
+     * @return true on success, false on error.
+     */
     bool FromProtoObject(const safeheron::proto::RSAKeyMeta &proof);
 
+    /**
+     * Convert this object into a base64 string.
+     * @param[out] base64
+     * @return true on success, false on error.
+     */
     bool ToBase64(std::string& base64) const;
+
+    /**
+     * Convert a base64 string into this object.
+     * @param[in] base64
+     * @return true on success, false on error.
+     */
     bool FromBase64(const std::string& base64);
 
+    /**
+     * Convert this object into a json string.
+     * @param[out] json_str
+     * @return true on success, false on error.
+     */
     bool ToJsonString(std::string &json_str) const;
+
+    /**
+     * Convert a json string into this object.
+     * @param[in] json_str
+     * @return true on success, false on error.
+     */
     bool FromJsonString(const std::string &json_str);
 private:
     int k_;  /**< threshold */

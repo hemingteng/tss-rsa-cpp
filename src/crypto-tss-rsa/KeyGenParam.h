@@ -21,11 +21,11 @@ public:
     KeyGenParam();
     /**
      * Constructor
-     * @param e : 65537 default.
-     * @param p : safe prime.
-     * @param q : safe prime.
-     * @param f : f \in Z_n^*, then f^2 \in Q_n
-     * @param vku: vku \in Z_n^*, Jacobi(vku, n) = -1, where n = pq
+     * @param[in] e : 65537 default.
+     * @param[in] p : safe prime.
+     * @param[in] q : safe prime.
+     * @param[in] f : f \in Z_n^*, then f^2 \in Q_n
+     * @param[in] vku: vku \in Z_n^*, Jacobi(vku, n) = -1, where n = pq
      */
     KeyGenParam(int e,
                 const safeheron::bignum::BN &p,
