@@ -1,16 +1,15 @@
 find_package(GTest REQUIRED)
 find_package(CryptoSuites REQUIRED)
 
-add_executable(tss-rsa-test tss-rsa-test.cpp)
-target_include_directories(tss-rsa-test PRIVATE
+include_directories(../src
         ${CryptoSuites_INCLUDE_DIRS}
-        "../src"
         ${GTEST_INCLUDE_DIRS})
-target_link_libraries(tss-rsa-test
-        CryptoTSSRSA
+link_libraries(CryptoTSSRSA
         ${GTEST_BOTH_LIBRARIES}
         ${PROTOBUF_LIBRARY_DIRS}
-        pthread )
+        pthread)
+
+add_executable(tss-rsa-test tss-rsa-test.cpp)
 add_test(NAME tss-rsa-test COMMAND tss-rsa-test)
 
 

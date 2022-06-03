@@ -5,124 +5,109 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-
 namespace safeheron {
 namespace proto {
 class RSAPublicKeyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RSAPublicKey> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RSAPublicKey> _instance;
 } _RSAPublicKey_default_instance_;
 class RSAPrivateKeyShareDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RSAPrivateKeyShare> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RSAPrivateKeyShare> _instance;
 } _RSAPrivateKeyShare_default_instance_;
 class RSAKeyMetaDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RSAKeyMeta> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RSAKeyMeta> _instance;
 } _RSAKeyMeta_default_instance_;
 class RSASigShareDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RSASigShare> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RSASigShare> _instance;
 } _RSASigShare_default_instance_;
 class RSASigShareProofDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RSASigShareProof> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RSASigShareProof> _instance;
 } _RSASigShareProof_default_instance_;
 }  // namespace proto
 }  // namespace safeheron
-static void InitDefaultsRSAPublicKey_tss_5frsa_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::safeheron::proto::_RSAPublicKey_default_instance_;
-    new (ptr) ::safeheron::proto::RSAPublicKey();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::safeheron::proto::RSAPublicKey::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_RSAPublicKey_tss_5frsa_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRSAPublicKey_tss_5frsa_2eproto}, {}};
-
-static void InitDefaultsRSAPrivateKeyShare_tss_5frsa_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::safeheron::proto::_RSAPrivateKeyShare_default_instance_;
-    new (ptr) ::safeheron::proto::RSAPrivateKeyShare();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::safeheron::proto::RSAPrivateKeyShare::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRSAPrivateKeyShare_tss_5frsa_2eproto}, {}};
-
-static void InitDefaultsRSAKeyMeta_tss_5frsa_2eproto() {
+static void InitDefaultsscc_info_RSAKeyMeta_tss_5frsa_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::safeheron::proto::_RSAKeyMeta_default_instance_;
     new (ptr) ::safeheron::proto::RSAKeyMeta();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::safeheron::proto::RSAKeyMeta::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_RSAKeyMeta_tss_5frsa_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRSAKeyMeta_tss_5frsa_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RSAKeyMeta_tss_5frsa_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RSAKeyMeta_tss_5frsa_2eproto}, {}};
 
-static void InitDefaultsRSASigShare_tss_5frsa_2eproto() {
+static void InitDefaultsscc_info_RSAPrivateKeyShare_tss_5frsa_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::safeheron::proto::_RSAPrivateKeyShare_default_instance_;
+    new (ptr) ::safeheron::proto::RSAPrivateKeyShare();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RSAPrivateKeyShare_tss_5frsa_2eproto}, {}};
+
+static void InitDefaultsscc_info_RSAPublicKey_tss_5frsa_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::safeheron::proto::_RSAPublicKey_default_instance_;
+    new (ptr) ::safeheron::proto::RSAPublicKey();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RSAPublicKey_tss_5frsa_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RSAPublicKey_tss_5frsa_2eproto}, {}};
+
+static void InitDefaultsscc_info_RSASigShare_tss_5frsa_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::safeheron::proto::_RSASigShare_default_instance_;
     new (ptr) ::safeheron::proto::RSASigShare();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::safeheron::proto::RSASigShare::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_RSASigShare_tss_5frsa_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRSASigShare_tss_5frsa_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RSASigShare_tss_5frsa_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RSASigShare_tss_5frsa_2eproto}, {}};
 
-static void InitDefaultsRSASigShareProof_tss_5frsa_2eproto() {
+static void InitDefaultsscc_info_RSASigShareProof_tss_5frsa_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::safeheron::proto::_RSASigShareProof_default_instance_;
     new (ptr) ::safeheron::proto::RSASigShareProof();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::safeheron::proto::RSASigShareProof::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_RSASigShareProof_tss_5frsa_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRSASigShareProof_tss_5frsa_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RSASigShareProof_tss_5frsa_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RSASigShareProof_tss_5frsa_2eproto}, {}};
 
-void InitDefaults_tss_5frsa_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_RSAPublicKey_tss_5frsa_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_RSAKeyMeta_tss_5frsa_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_RSASigShare_tss_5frsa_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_RSASigShareProof_tss_5frsa_2eproto.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_tss_5frsa_2eproto[5];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_tss_5frsa_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_tss_5frsa_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata_tss_5frsa_2eproto[5];
-constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_tss_5frsa_2eproto = nullptr;
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_tss_5frsa_2eproto = nullptr;
-
-const ::google::protobuf::uint32 TableStruct_tss_5frsa_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tss_5frsa_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::safeheron::proto::RSAPublicKey, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -164,7 +149,7 @@ const ::google::protobuf::uint32 TableStruct_tss_5frsa_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::safeheron::proto::RSASigShareProof, z_),
   PROTOBUF_FIELD_OFFSET(::safeheron::proto::RSASigShareProof, c_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::safeheron::proto::RSAPublicKey)},
   { 7, -1, sizeof(::safeheron::proto::RSAPrivateKeyShare)},
   { 14, -1, sizeof(::safeheron::proto::RSAKeyMeta)},
@@ -172,21 +157,15 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 33, -1, sizeof(::safeheron::proto::RSASigShareProof)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::safeheron::proto::_RSAPublicKey_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::safeheron::proto::_RSAPrivateKeyShare_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::safeheron::proto::_RSAKeyMeta_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::safeheron::proto::_RSASigShare_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::safeheron::proto::_RSASigShareProof_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::safeheron::proto::_RSAPublicKey_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::safeheron::proto::_RSAPrivateKeyShare_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::safeheron::proto::_RSAKeyMeta_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::safeheron::proto::_RSASigShare_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::safeheron::proto::_RSASigShareProof_default_instance_),
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_tss_5frsa_2eproto = {
-  {}, AddDescriptors_tss_5frsa_2eproto, "tss_rsa.proto", schemas,
-  file_default_instances, TableStruct_tss_5frsa_2eproto::offsets,
-  file_level_metadata_tss_5frsa_2eproto, 5, file_level_enum_descriptors_tss_5frsa_2eproto, file_level_service_descriptors_tss_5frsa_2eproto,
-};
-
-const char descriptor_table_protodef_tss_5frsa_2eproto[] =
+const char descriptor_table_protodef_tss_5frsa_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\rtss_rsa.proto\022\017safeheron.proto\"$\n\014RSAP"
   "ublicKey\022\t\n\001n\030\001 \001(\t\022\t\n\001e\030\002 \001(\t\"+\n\022RSAPri"
   "vateKeyShare\022\t\n\001i\030\001 \001(\005\022\n\n\002si\030\002 \001(\t\"M\n\nR"
@@ -196,288 +175,176 @@ const char descriptor_table_protodef_tss_5frsa_2eproto[] =
   "\001(\t\022\t\n\001z\030\003 \001(\t\022\t\n\001c\030\004 \001(\t\"(\n\020RSASigShare"
   "Proof\022\t\n\001z\030\001 \001(\t\022\t\n\001c\030\002 \001(\tb\006proto3"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_tss_5frsa_2eproto = {
-  false, InitDefaults_tss_5frsa_2eproto, 
-  descriptor_table_protodef_tss_5frsa_2eproto,
-  "tss_rsa.proto", &assign_descriptors_table_tss_5frsa_2eproto, 315,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_tss_5frsa_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_tss_5frsa_2eproto_sccs[5] = {
+  &scc_info_RSAKeyMeta_tss_5frsa_2eproto.base,
+  &scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto.base,
+  &scc_info_RSAPublicKey_tss_5frsa_2eproto.base,
+  &scc_info_RSASigShare_tss_5frsa_2eproto.base,
+  &scc_info_RSASigShareProof_tss_5frsa_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_tss_5frsa_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tss_5frsa_2eproto = {
+  false, false, descriptor_table_protodef_tss_5frsa_2eproto, "tss_rsa.proto", 315,
+  &descriptor_table_tss_5frsa_2eproto_once, descriptor_table_tss_5frsa_2eproto_sccs, descriptor_table_tss_5frsa_2eproto_deps, 5, 0,
+  schemas, file_default_instances, TableStruct_tss_5frsa_2eproto::offsets,
+  file_level_metadata_tss_5frsa_2eproto, 5, file_level_enum_descriptors_tss_5frsa_2eproto, file_level_service_descriptors_tss_5frsa_2eproto,
 };
 
-void AddDescriptors_tss_5frsa_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
-  {
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_tss_5frsa_2eproto, deps, 0);
-}
-
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_tss_5frsa_2eproto = []() { AddDescriptors_tss_5frsa_2eproto(); return true; }();
+static bool dynamic_init_dummy_tss_5frsa_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_tss_5frsa_2eproto)), true);
 namespace safeheron {
 namespace proto {
 
 // ===================================================================
 
-void RSAPublicKey::InitAsDefaultInstance() {
-}
-class RSAPublicKey::HasBitSetters {
+class RSAPublicKey::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RSAPublicKey::kNFieldNumber;
-const int RSAPublicKey::kEFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-RSAPublicKey::RSAPublicKey()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+RSAPublicKey::RSAPublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:safeheron.proto.RSAPublicKey)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:safeheron.proto.RSAPublicKey)
 }
 RSAPublicKey::RSAPublicKey(const RSAPublicKey& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  n_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.n().size() > 0) {
-    n_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.n_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  n_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_n().empty()) {
+    n_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_n(), 
+      GetArena());
   }
-  e_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.e().size() > 0) {
-    e_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.e_);
+  e_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_e().empty()) {
+    e_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_e(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:safeheron.proto.RSAPublicKey)
 }
 
 void RSAPublicKey::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_RSAPublicKey_tss_5frsa_2eproto.base);
-  n_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  e_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RSAPublicKey_tss_5frsa_2eproto.base);
+  n_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  e_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 RSAPublicKey::~RSAPublicKey() {
   // @@protoc_insertion_point(destructor:safeheron.proto.RSAPublicKey)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RSAPublicKey::SharedDtor() {
-  n_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  e_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  n_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  e_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RSAPublicKey::ArenaDtor(void* object) {
+  RSAPublicKey* _this = reinterpret_cast< RSAPublicKey* >(object);
+  (void)_this;
+}
+void RSAPublicKey::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RSAPublicKey::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const RSAPublicKey& RSAPublicKey::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_RSAPublicKey_tss_5frsa_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RSAPublicKey_tss_5frsa_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void RSAPublicKey::Clear() {
 // @@protoc_insertion_point(message_clear_start:safeheron.proto.RSAPublicKey)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  n_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  e_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  n_.ClearToEmpty();
+  e_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* RSAPublicKey::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<RSAPublicKey*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* RSAPublicKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string n = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSAPublicKey.n");
-        object = msg->mutable_n();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_n();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSAPublicKey.n"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string e = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSAPublicKey.e");
-        object = msg->mutable_e();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_e();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSAPublicKey.e"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool RSAPublicKey::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:safeheron.proto.RSAPublicKey)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string n = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_n()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->n().data(), static_cast<int>(this->n().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSAPublicKey.n"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string e = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_e()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->e().data(), static_cast<int>(this->e().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSAPublicKey.e"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:safeheron.proto.RSAPublicKey)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:safeheron.proto.RSAPublicKey)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void RSAPublicKey::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:safeheron.proto.RSAPublicKey)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string n = 1;
-  if (this->n().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->n().data(), static_cast<int>(this->n().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSAPublicKey.n");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->n(), output);
-  }
-
-  // string e = 2;
-  if (this->e().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->e().data(), static_cast<int>(this->e().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSAPublicKey.e");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->e(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:safeheron.proto.RSAPublicKey)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* RSAPublicKey::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RSAPublicKey::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:safeheron.proto.RSAPublicKey)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string n = 1;
   if (this->n().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->n().data(), static_cast<int>(this->n().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_n().data(), static_cast<int>(this->_internal_n().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSAPublicKey.n");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->n(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_n(), target);
   }
 
   // string e = 2;
   if (this->e().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->e().data(), static_cast<int>(this->e().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_e().data(), static_cast<int>(this->_internal_e().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSAPublicKey.e");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->e(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_e(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:safeheron.proto.RSAPublicKey)
   return target;
@@ -487,43 +354,42 @@ size_t RSAPublicKey::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:safeheron.proto.RSAPublicKey)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string n = 1;
   if (this->n().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->n());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_n());
   }
 
   // string e = 2;
   if (this->e().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->e());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_e());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void RSAPublicKey::MergeFrom(const ::google::protobuf::Message& from) {
+void RSAPublicKey::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:safeheron.proto.RSAPublicKey)
   GOOGLE_DCHECK_NE(&from, this);
   const RSAPublicKey* source =
-      ::google::protobuf::DynamicCastToGenerated<RSAPublicKey>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RSAPublicKey>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:safeheron.proto.RSAPublicKey)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:safeheron.proto.RSAPublicKey)
     MergeFrom(*source);
@@ -533,21 +399,19 @@ void RSAPublicKey::MergeFrom(const ::google::protobuf::Message& from) {
 void RSAPublicKey::MergeFrom(const RSAPublicKey& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:safeheron.proto.RSAPublicKey)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.n().size() > 0) {
-
-    n_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.n_);
+    _internal_set_n(from._internal_n());
   }
   if (from.e().size() > 0) {
-
-    e_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.e_);
+    _internal_set_e(from._internal_e());
   }
 }
 
-void RSAPublicKey::CopyFrom(const ::google::protobuf::Message& from) {
+void RSAPublicKey::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:safeheron.proto.RSAPublicKey)
   if (&from == this) return;
   Clear();
@@ -565,263 +429,155 @@ bool RSAPublicKey::IsInitialized() const {
   return true;
 }
 
-void RSAPublicKey::Swap(RSAPublicKey* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RSAPublicKey::InternalSwap(RSAPublicKey* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  n_.Swap(&other->n_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  e_.Swap(&other->e_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  n_.Swap(&other->n_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  e_.Swap(&other->e_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
-::google::protobuf::Metadata RSAPublicKey::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_tss_5frsa_2eproto);
-  return ::file_level_metadata_tss_5frsa_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RSAPublicKey::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RSAPrivateKeyShare::InitAsDefaultInstance() {
-}
-class RSAPrivateKeyShare::HasBitSetters {
+class RSAPrivateKeyShare::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RSAPrivateKeyShare::kIFieldNumber;
-const int RSAPrivateKeyShare::kSiFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-RSAPrivateKeyShare::RSAPrivateKeyShare()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+RSAPrivateKeyShare::RSAPrivateKeyShare(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:safeheron.proto.RSAPrivateKeyShare)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:safeheron.proto.RSAPrivateKeyShare)
 }
 RSAPrivateKeyShare::RSAPrivateKeyShare(const RSAPrivateKeyShare& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  si_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.si().size() > 0) {
-    si_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.si_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  si_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_si().empty()) {
+    si_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_si(), 
+      GetArena());
   }
   i_ = from.i_;
   // @@protoc_insertion_point(copy_constructor:safeheron.proto.RSAPrivateKeyShare)
 }
 
 void RSAPrivateKeyShare::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto.base);
-  si_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto.base);
+  si_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   i_ = 0;
 }
 
 RSAPrivateKeyShare::~RSAPrivateKeyShare() {
   // @@protoc_insertion_point(destructor:safeheron.proto.RSAPrivateKeyShare)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RSAPrivateKeyShare::SharedDtor() {
-  si_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  si_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RSAPrivateKeyShare::ArenaDtor(void* object) {
+  RSAPrivateKeyShare* _this = reinterpret_cast< RSAPrivateKeyShare* >(object);
+  (void)_this;
+}
+void RSAPrivateKeyShare::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RSAPrivateKeyShare::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const RSAPrivateKeyShare& RSAPrivateKeyShare::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RSAPrivateKeyShare_tss_5frsa_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void RSAPrivateKeyShare::Clear() {
 // @@protoc_insertion_point(message_clear_start:safeheron.proto.RSAPrivateKeyShare)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  si_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  si_.ClearToEmpty();
   i_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* RSAPrivateKeyShare::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<RSAPrivateKeyShare*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* RSAPrivateKeyShare::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // int32 i = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_i(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          i_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string si = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSAPrivateKeyShare.si");
-        object = msg->mutable_si();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_si();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSAPrivateKeyShare.si"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool RSAPrivateKeyShare::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:safeheron.proto.RSAPrivateKeyShare)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 i = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &i_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string si = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_si()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->si().data(), static_cast<int>(this->si().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSAPrivateKeyShare.si"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:safeheron.proto.RSAPrivateKeyShare)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:safeheron.proto.RSAPrivateKeyShare)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void RSAPrivateKeyShare::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:safeheron.proto.RSAPrivateKeyShare)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 i = 1;
-  if (this->i() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->i(), output);
-  }
-
-  // string si = 2;
-  if (this->si().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->si().data(), static_cast<int>(this->si().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSAPrivateKeyShare.si");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->si(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:safeheron.proto.RSAPrivateKeyShare)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* RSAPrivateKeyShare::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RSAPrivateKeyShare::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:safeheron.proto.RSAPrivateKeyShare)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 i = 1;
   if (this->i() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->i(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_i(), target);
   }
 
   // string si = 2;
   if (this->si().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->si().data(), static_cast<int>(this->si().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_si().data(), static_cast<int>(this->_internal_si().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSAPrivateKeyShare.si");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->si(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_si(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:safeheron.proto.RSAPrivateKeyShare)
   return target;
@@ -831,43 +587,42 @@ size_t RSAPrivateKeyShare::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:safeheron.proto.RSAPrivateKeyShare)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string si = 2;
   if (this->si().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->si());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_si());
   }
 
   // int32 i = 1;
   if (this->i() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->i());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_i());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void RSAPrivateKeyShare::MergeFrom(const ::google::protobuf::Message& from) {
+void RSAPrivateKeyShare::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:safeheron.proto.RSAPrivateKeyShare)
   GOOGLE_DCHECK_NE(&from, this);
   const RSAPrivateKeyShare* source =
-      ::google::protobuf::DynamicCastToGenerated<RSAPrivateKeyShare>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RSAPrivateKeyShare>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:safeheron.proto.RSAPrivateKeyShare)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:safeheron.proto.RSAPrivateKeyShare)
     MergeFrom(*source);
@@ -877,20 +632,19 @@ void RSAPrivateKeyShare::MergeFrom(const ::google::protobuf::Message& from) {
 void RSAPrivateKeyShare::MergeFrom(const RSAPrivateKeyShare& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:safeheron.proto.RSAPrivateKeyShare)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.si().size() > 0) {
-
-    si_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.si_);
+    _internal_set_si(from._internal_si());
   }
   if (from.i() != 0) {
-    set_i(from.i());
+    _internal_set_i(from._internal_i());
   }
 }
 
-void RSAPrivateKeyShare::CopyFrom(const ::google::protobuf::Message& from) {
+void RSAPrivateKeyShare::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:safeheron.proto.RSAPrivateKeyShare)
   if (&from == this) return;
   Clear();
@@ -908,57 +662,44 @@ bool RSAPrivateKeyShare::IsInitialized() const {
   return true;
 }
 
-void RSAPrivateKeyShare::Swap(RSAPrivateKeyShare* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RSAPrivateKeyShare::InternalSwap(RSAPrivateKeyShare* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  si_.Swap(&other->si_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  si_.Swap(&other->si_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(i_, other->i_);
 }
 
-::google::protobuf::Metadata RSAPrivateKeyShare::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_tss_5frsa_2eproto);
-  return ::file_level_metadata_tss_5frsa_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RSAPrivateKeyShare::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RSAKeyMeta::InitAsDefaultInstance() {
-}
-class RSAKeyMeta::HasBitSetters {
+class RSAKeyMeta::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RSAKeyMeta::kKFieldNumber;
-const int RSAKeyMeta::kLFieldNumber;
-const int RSAKeyMeta::kVkvFieldNumber;
-const int RSAKeyMeta::kVkuFieldNumber;
-const int RSAKeyMeta::kVkiArrFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-RSAKeyMeta::RSAKeyMeta()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+RSAKeyMeta::RSAKeyMeta(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  vki_arr_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:safeheron.proto.RSAKeyMeta)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:safeheron.proto.RSAKeyMeta)
 }
 RSAKeyMeta::RSAKeyMeta(const RSAKeyMeta& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       vki_arr_(from.vki_arr_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  vkv_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.vkv().size() > 0) {
-    vkv_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vkv_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  vkv_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vkv().empty()) {
+    vkv_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vkv(), 
+      GetArena());
   }
-  vku_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.vku().size() > 0) {
-    vku_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vku_);
+  vku_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vku().empty()) {
+    vku_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vku(), 
+      GetArena());
   }
   ::memcpy(&k_, &from.k_,
     static_cast<size_t>(reinterpret_cast<char*>(&l_) -
@@ -967,358 +708,183 @@ RSAKeyMeta::RSAKeyMeta(const RSAKeyMeta& from)
 }
 
 void RSAKeyMeta::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_RSAKeyMeta_tss_5frsa_2eproto.base);
-  vkv_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  vku_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&k_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&l_) -
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RSAKeyMeta_tss_5frsa_2eproto.base);
+  vkv_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vku_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&k_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&l_) -
       reinterpret_cast<char*>(&k_)) + sizeof(l_));
 }
 
 RSAKeyMeta::~RSAKeyMeta() {
   // @@protoc_insertion_point(destructor:safeheron.proto.RSAKeyMeta)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RSAKeyMeta::SharedDtor() {
-  vkv_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  vku_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  vkv_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vku_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RSAKeyMeta::ArenaDtor(void* object) {
+  RSAKeyMeta* _this = reinterpret_cast< RSAKeyMeta* >(object);
+  (void)_this;
+}
+void RSAKeyMeta::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RSAKeyMeta::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const RSAKeyMeta& RSAKeyMeta::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_RSAKeyMeta_tss_5frsa_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RSAKeyMeta_tss_5frsa_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void RSAKeyMeta::Clear() {
 // @@protoc_insertion_point(message_clear_start:safeheron.proto.RSAKeyMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   vki_arr_.Clear();
-  vkv_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  vku_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  vkv_.ClearToEmpty();
+  vku_.ClearToEmpty();
   ::memset(&k_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&l_) -
       reinterpret_cast<char*>(&k_)) + sizeof(l_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* RSAKeyMeta::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<RSAKeyMeta*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* RSAKeyMeta::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // int32 k = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_k(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          k_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // int32 l = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_l(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          l_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string vkv = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSAKeyMeta.vkv");
-        object = msg->mutable_vkv();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_vkv();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSAKeyMeta.vkv"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string vku = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSAKeyMeta.vku");
-        object = msg->mutable_vku();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_vku();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSAKeyMeta.vku"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // repeated string vki_arr = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("safeheron.proto.RSAKeyMeta.vki_arr");
-          object = msg->add_vki_arr();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
-        break;
-      }
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_vki_arr();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSAKeyMeta.vki_arr"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool RSAKeyMeta::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:safeheron.proto.RSAKeyMeta)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 k = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &k_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // int32 l = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &l_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string vkv = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_vkv()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->vkv().data(), static_cast<int>(this->vkv().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSAKeyMeta.vkv"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string vku = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_vku()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->vku().data(), static_cast<int>(this->vku().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSAKeyMeta.vku"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string vki_arr = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_vki_arr()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->vki_arr(this->vki_arr_size() - 1).data(),
-            static_cast<int>(this->vki_arr(this->vki_arr_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSAKeyMeta.vki_arr"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:safeheron.proto.RSAKeyMeta)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:safeheron.proto.RSAKeyMeta)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void RSAKeyMeta::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:safeheron.proto.RSAKeyMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 k = 1;
-  if (this->k() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->k(), output);
-  }
-
-  // int32 l = 2;
-  if (this->l() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->l(), output);
-  }
-
-  // string vkv = 3;
-  if (this->vkv().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->vkv().data(), static_cast<int>(this->vkv().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSAKeyMeta.vkv");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->vkv(), output);
-  }
-
-  // string vku = 4;
-  if (this->vku().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->vku().data(), static_cast<int>(this->vku().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSAKeyMeta.vku");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->vku(), output);
-  }
-
-  // repeated string vki_arr = 5;
-  for (int i = 0, n = this->vki_arr_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->vki_arr(i).data(), static_cast<int>(this->vki_arr(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSAKeyMeta.vki_arr");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      5, this->vki_arr(i), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:safeheron.proto.RSAKeyMeta)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* RSAKeyMeta::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RSAKeyMeta::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:safeheron.proto.RSAKeyMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 k = 1;
   if (this->k() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->k(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_k(), target);
   }
 
   // int32 l = 2;
   if (this->l() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->l(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_l(), target);
   }
 
   // string vkv = 3;
   if (this->vkv().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->vkv().data(), static_cast<int>(this->vkv().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vkv().data(), static_cast<int>(this->_internal_vkv().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSAKeyMeta.vkv");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->vkv(), target);
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_vkv(), target);
   }
 
   // string vku = 4;
   if (this->vku().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->vku().data(), static_cast<int>(this->vku().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vku().data(), static_cast<int>(this->_internal_vku().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSAKeyMeta.vku");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->vku(), target);
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_vku(), target);
   }
 
   // repeated string vki_arr = 5;
-  for (int i = 0, n = this->vki_arr_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->vki_arr(i).data(), static_cast<int>(this->vki_arr(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+  for (int i = 0, n = this->_internal_vki_arr_size(); i < n; i++) {
+    const auto& s = this->_internal_vki_arr(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSAKeyMeta.vki_arr");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(5, this->vki_arr(i), target);
+    target = stream->WriteString(5, s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:safeheron.proto.RSAKeyMeta)
   return target;
@@ -1328,65 +894,64 @@ size_t RSAKeyMeta::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:safeheron.proto.RSAKeyMeta)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string vki_arr = 5;
   total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->vki_arr_size());
-  for (int i = 0, n = this->vki_arr_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->vki_arr(i));
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(vki_arr_.size());
+  for (int i = 0, n = vki_arr_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      vki_arr_.Get(i));
   }
 
   // string vkv = 3;
   if (this->vkv().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->vkv());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vkv());
   }
 
   // string vku = 4;
   if (this->vku().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->vku());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vku());
   }
 
   // int32 k = 1;
   if (this->k() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->k());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_k());
   }
 
   // int32 l = 2;
   if (this->l() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->l());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_l());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void RSAKeyMeta::MergeFrom(const ::google::protobuf::Message& from) {
+void RSAKeyMeta::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:safeheron.proto.RSAKeyMeta)
   GOOGLE_DCHECK_NE(&from, this);
   const RSAKeyMeta* source =
-      ::google::protobuf::DynamicCastToGenerated<RSAKeyMeta>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RSAKeyMeta>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:safeheron.proto.RSAKeyMeta)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:safeheron.proto.RSAKeyMeta)
     MergeFrom(*source);
@@ -1396,28 +961,26 @@ void RSAKeyMeta::MergeFrom(const ::google::protobuf::Message& from) {
 void RSAKeyMeta::MergeFrom(const RSAKeyMeta& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:safeheron.proto.RSAKeyMeta)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   vki_arr_.MergeFrom(from.vki_arr_);
   if (from.vkv().size() > 0) {
-
-    vkv_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vkv_);
+    _internal_set_vkv(from._internal_vkv());
   }
   if (from.vku().size() > 0) {
-
-    vku_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vku_);
+    _internal_set_vku(from._internal_vku());
   }
   if (from.k() != 0) {
-    set_k(from.k());
+    _internal_set_k(from._internal_k());
   }
   if (from.l() != 0) {
-    set_l(from.l());
+    _internal_set_l(from._internal_l());
   }
 }
 
-void RSAKeyMeta::CopyFrom(const ::google::protobuf::Message& from) {
+void RSAKeyMeta::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:safeheron.proto.RSAKeyMeta)
   if (&from == this) return;
   Clear();
@@ -1435,386 +998,216 @@ bool RSAKeyMeta::IsInitialized() const {
   return true;
 }
 
-void RSAKeyMeta::Swap(RSAKeyMeta* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RSAKeyMeta::InternalSwap(RSAKeyMeta* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  vki_arr_.InternalSwap(CastToBase(&other->vki_arr_));
-  vkv_.Swap(&other->vkv_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  vku_.Swap(&other->vku_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(k_, other->k_);
-  swap(l_, other->l_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  vki_arr_.InternalSwap(&other->vki_arr_);
+  vkv_.Swap(&other->vkv_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vku_.Swap(&other->vku_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RSAKeyMeta, l_)
+      + sizeof(RSAKeyMeta::l_)
+      - PROTOBUF_FIELD_OFFSET(RSAKeyMeta, k_)>(
+          reinterpret_cast<char*>(&k_),
+          reinterpret_cast<char*>(&other->k_));
 }
 
-::google::protobuf::Metadata RSAKeyMeta::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_tss_5frsa_2eproto);
-  return ::file_level_metadata_tss_5frsa_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RSAKeyMeta::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RSASigShare::InitAsDefaultInstance() {
-}
-class RSASigShare::HasBitSetters {
+class RSASigShare::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RSASigShare::kIndexFieldNumber;
-const int RSASigShare::kSigShareFieldNumber;
-const int RSASigShare::kZFieldNumber;
-const int RSASigShare::kCFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-RSASigShare::RSASigShare()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+RSASigShare::RSASigShare(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:safeheron.proto.RSASigShare)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:safeheron.proto.RSASigShare)
 }
 RSASigShare::RSASigShare(const RSASigShare& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  sig_share_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.sig_share().size() > 0) {
-    sig_share_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sig_share_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  sig_share_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_sig_share().empty()) {
+    sig_share_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sig_share(), 
+      GetArena());
   }
-  z_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.z().size() > 0) {
-    z_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.z_);
+  z_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_z().empty()) {
+    z_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_z(), 
+      GetArena());
   }
-  c_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.c().size() > 0) {
-    c_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.c_);
+  c_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_c().empty()) {
+    c_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_c(), 
+      GetArena());
   }
   index_ = from.index_;
   // @@protoc_insertion_point(copy_constructor:safeheron.proto.RSASigShare)
 }
 
 void RSASigShare::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_RSASigShare_tss_5frsa_2eproto.base);
-  sig_share_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  z_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  c_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RSASigShare_tss_5frsa_2eproto.base);
+  sig_share_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  z_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  c_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   index_ = 0;
 }
 
 RSASigShare::~RSASigShare() {
   // @@protoc_insertion_point(destructor:safeheron.proto.RSASigShare)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RSASigShare::SharedDtor() {
-  sig_share_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  z_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  c_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  sig_share_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  z_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  c_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RSASigShare::ArenaDtor(void* object) {
+  RSASigShare* _this = reinterpret_cast< RSASigShare* >(object);
+  (void)_this;
+}
+void RSASigShare::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RSASigShare::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const RSASigShare& RSASigShare::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_RSASigShare_tss_5frsa_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RSASigShare_tss_5frsa_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void RSASigShare::Clear() {
 // @@protoc_insertion_point(message_clear_start:safeheron.proto.RSASigShare)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sig_share_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  z_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  c_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sig_share_.ClearToEmpty();
+  z_.ClearToEmpty();
+  c_.ClearToEmpty();
   index_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* RSASigShare::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<RSASigShare*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* RSASigShare::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // int32 index = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_index(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string sig_share = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSASigShare.sig_share");
-        object = msg->mutable_sig_share();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_sig_share();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSASigShare.sig_share"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string z = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSASigShare.z");
-        object = msg->mutable_z();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_z();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSASigShare.z"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string c = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSASigShare.c");
-        object = msg->mutable_c();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_c();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSASigShare.c"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool RSASigShare::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:safeheron.proto.RSASigShare)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string sig_share = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_sig_share()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->sig_share().data(), static_cast<int>(this->sig_share().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSASigShare.sig_share"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string z = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_z()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->z().data(), static_cast<int>(this->z().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSASigShare.z"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string c = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_c()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->c().data(), static_cast<int>(this->c().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSASigShare.c"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:safeheron.proto.RSASigShare)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:safeheron.proto.RSASigShare)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void RSASigShare::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:safeheron.proto.RSASigShare)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 index = 1;
-  if (this->index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->index(), output);
-  }
-
-  // string sig_share = 2;
-  if (this->sig_share().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sig_share().data(), static_cast<int>(this->sig_share().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSASigShare.sig_share");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->sig_share(), output);
-  }
-
-  // string z = 3;
-  if (this->z().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->z().data(), static_cast<int>(this->z().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSASigShare.z");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->z(), output);
-  }
-
-  // string c = 4;
-  if (this->c().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->c().data(), static_cast<int>(this->c().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSASigShare.c");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->c(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:safeheron.proto.RSASigShare)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* RSASigShare::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RSASigShare::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:safeheron.proto.RSASigShare)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 index = 1;
   if (this->index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_index(), target);
   }
 
   // string sig_share = 2;
   if (this->sig_share().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sig_share().data(), static_cast<int>(this->sig_share().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_sig_share().data(), static_cast<int>(this->_internal_sig_share().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSASigShare.sig_share");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->sig_share(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_sig_share(), target);
   }
 
   // string z = 3;
   if (this->z().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->z().data(), static_cast<int>(this->z().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_z().data(), static_cast<int>(this->_internal_z().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSASigShare.z");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->z(), target);
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_z(), target);
   }
 
   // string c = 4;
   if (this->c().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->c().data(), static_cast<int>(this->c().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_c().data(), static_cast<int>(this->_internal_c().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSASigShare.c");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->c(), target);
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_c(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:safeheron.proto.RSASigShare)
   return target;
@@ -1824,57 +1217,56 @@ size_t RSASigShare::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:safeheron.proto.RSASigShare)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sig_share = 2;
   if (this->sig_share().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->sig_share());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sig_share());
   }
 
   // string z = 3;
   if (this->z().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->z());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_z());
   }
 
   // string c = 4;
   if (this->c().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->c());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_c());
   }
 
   // int32 index = 1;
   if (this->index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_index());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void RSASigShare::MergeFrom(const ::google::protobuf::Message& from) {
+void RSASigShare::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:safeheron.proto.RSASigShare)
   GOOGLE_DCHECK_NE(&from, this);
   const RSASigShare* source =
-      ::google::protobuf::DynamicCastToGenerated<RSASigShare>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RSASigShare>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:safeheron.proto.RSASigShare)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:safeheron.proto.RSASigShare)
     MergeFrom(*source);
@@ -1884,28 +1276,25 @@ void RSASigShare::MergeFrom(const ::google::protobuf::Message& from) {
 void RSASigShare::MergeFrom(const RSASigShare& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:safeheron.proto.RSASigShare)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.sig_share().size() > 0) {
-
-    sig_share_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sig_share_);
+    _internal_set_sig_share(from._internal_sig_share());
   }
   if (from.z().size() > 0) {
-
-    z_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.z_);
+    _internal_set_z(from._internal_z());
   }
   if (from.c().size() > 0) {
-
-    c_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.c_);
+    _internal_set_c(from._internal_c());
   }
   if (from.index() != 0) {
-    set_index(from.index());
+    _internal_set_index(from._internal_index());
   }
 }
 
-void RSASigShare::CopyFrom(const ::google::protobuf::Message& from) {
+void RSASigShare::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:safeheron.proto.RSASigShare)
   if (&from == this) return;
   Clear();
@@ -1923,292 +1312,168 @@ bool RSASigShare::IsInitialized() const {
   return true;
 }
 
-void RSASigShare::Swap(RSASigShare* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RSASigShare::InternalSwap(RSASigShare* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  sig_share_.Swap(&other->sig_share_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  z_.Swap(&other->z_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  c_.Swap(&other->c_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  sig_share_.Swap(&other->sig_share_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  z_.Swap(&other->z_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  c_.Swap(&other->c_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(index_, other->index_);
 }
 
-::google::protobuf::Metadata RSASigShare::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_tss_5frsa_2eproto);
-  return ::file_level_metadata_tss_5frsa_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RSASigShare::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RSASigShareProof::InitAsDefaultInstance() {
-}
-class RSASigShareProof::HasBitSetters {
+class RSASigShareProof::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RSASigShareProof::kZFieldNumber;
-const int RSASigShareProof::kCFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-RSASigShareProof::RSASigShareProof()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+RSASigShareProof::RSASigShareProof(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:safeheron.proto.RSASigShareProof)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:safeheron.proto.RSASigShareProof)
 }
 RSASigShareProof::RSASigShareProof(const RSASigShareProof& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  z_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.z().size() > 0) {
-    z_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.z_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  z_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_z().empty()) {
+    z_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_z(), 
+      GetArena());
   }
-  c_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.c().size() > 0) {
-    c_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.c_);
+  c_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_c().empty()) {
+    c_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_c(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:safeheron.proto.RSASigShareProof)
 }
 
 void RSASigShareProof::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_RSASigShareProof_tss_5frsa_2eproto.base);
-  z_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  c_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RSASigShareProof_tss_5frsa_2eproto.base);
+  z_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  c_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 RSASigShareProof::~RSASigShareProof() {
   // @@protoc_insertion_point(destructor:safeheron.proto.RSASigShareProof)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RSASigShareProof::SharedDtor() {
-  z_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  c_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  z_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  c_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RSASigShareProof::ArenaDtor(void* object) {
+  RSASigShareProof* _this = reinterpret_cast< RSASigShareProof* >(object);
+  (void)_this;
+}
+void RSASigShareProof::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RSASigShareProof::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const RSASigShareProof& RSASigShareProof::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_RSASigShareProof_tss_5frsa_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RSASigShareProof_tss_5frsa_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void RSASigShareProof::Clear() {
 // @@protoc_insertion_point(message_clear_start:safeheron.proto.RSASigShareProof)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  z_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  c_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  z_.ClearToEmpty();
+  c_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* RSASigShareProof::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<RSASigShareProof*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* RSASigShareProof::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string z = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSASigShareProof.z");
-        object = msg->mutable_z();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_z();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSASigShareProof.z"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string c = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("safeheron.proto.RSASigShareProof.c");
-        object = msg->mutable_c();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_c();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "safeheron.proto.RSASigShareProof.c"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool RSASigShareProof::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:safeheron.proto.RSASigShareProof)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string z = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_z()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->z().data(), static_cast<int>(this->z().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSASigShareProof.z"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string c = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_c()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->c().data(), static_cast<int>(this->c().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "safeheron.proto.RSASigShareProof.c"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:safeheron.proto.RSASigShareProof)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:safeheron.proto.RSASigShareProof)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void RSASigShareProof::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:safeheron.proto.RSASigShareProof)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string z = 1;
-  if (this->z().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->z().data(), static_cast<int>(this->z().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSASigShareProof.z");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->z(), output);
-  }
-
-  // string c = 2;
-  if (this->c().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->c().data(), static_cast<int>(this->c().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "safeheron.proto.RSASigShareProof.c");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->c(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:safeheron.proto.RSASigShareProof)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* RSASigShareProof::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RSASigShareProof::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:safeheron.proto.RSASigShareProof)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string z = 1;
   if (this->z().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->z().data(), static_cast<int>(this->z().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_z().data(), static_cast<int>(this->_internal_z().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSASigShareProof.z");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->z(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_z(), target);
   }
 
   // string c = 2;
   if (this->c().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->c().data(), static_cast<int>(this->c().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_c().data(), static_cast<int>(this->_internal_c().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "safeheron.proto.RSASigShareProof.c");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->c(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_c(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:safeheron.proto.RSASigShareProof)
   return target;
@@ -2218,43 +1483,42 @@ size_t RSASigShareProof::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:safeheron.proto.RSASigShareProof)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string z = 1;
   if (this->z().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->z());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_z());
   }
 
   // string c = 2;
   if (this->c().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->c());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_c());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void RSASigShareProof::MergeFrom(const ::google::protobuf::Message& from) {
+void RSASigShareProof::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:safeheron.proto.RSASigShareProof)
   GOOGLE_DCHECK_NE(&from, this);
   const RSASigShareProof* source =
-      ::google::protobuf::DynamicCastToGenerated<RSASigShareProof>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RSASigShareProof>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:safeheron.proto.RSASigShareProof)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:safeheron.proto.RSASigShareProof)
     MergeFrom(*source);
@@ -2264,21 +1528,19 @@ void RSASigShareProof::MergeFrom(const ::google::protobuf::Message& from) {
 void RSASigShareProof::MergeFrom(const RSASigShareProof& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:safeheron.proto.RSASigShareProof)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.z().size() > 0) {
-
-    z_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.z_);
+    _internal_set_z(from._internal_z());
   }
   if (from.c().size() > 0) {
-
-    c_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.c_);
+    _internal_set_c(from._internal_c());
   }
 }
 
-void RSASigShareProof::CopyFrom(const ::google::protobuf::Message& from) {
+void RSASigShareProof::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:safeheron.proto.RSASigShareProof)
   if (&from == this) return;
   Clear();
@@ -2296,47 +1558,38 @@ bool RSASigShareProof::IsInitialized() const {
   return true;
 }
 
-void RSASigShareProof::Swap(RSASigShareProof* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RSASigShareProof::InternalSwap(RSASigShareProof* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  z_.Swap(&other->z_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  c_.Swap(&other->c_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  z_.Swap(&other->z_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  c_.Swap(&other->c_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
-::google::protobuf::Metadata RSASigShareProof::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_tss_5frsa_2eproto);
-  return ::file_level_metadata_tss_5frsa_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RSASigShareProof::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace proto
 }  // namespace safeheron
-namespace google {
-namespace protobuf {
+PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::safeheron::proto::RSAPublicKey* Arena::CreateMaybeMessage< ::safeheron::proto::RSAPublicKey >(Arena* arena) {
-  return Arena::CreateInternal< ::safeheron::proto::RSAPublicKey >(arena);
+  return Arena::CreateMessageInternal< ::safeheron::proto::RSAPublicKey >(arena);
 }
 template<> PROTOBUF_NOINLINE ::safeheron::proto::RSAPrivateKeyShare* Arena::CreateMaybeMessage< ::safeheron::proto::RSAPrivateKeyShare >(Arena* arena) {
-  return Arena::CreateInternal< ::safeheron::proto::RSAPrivateKeyShare >(arena);
+  return Arena::CreateMessageInternal< ::safeheron::proto::RSAPrivateKeyShare >(arena);
 }
 template<> PROTOBUF_NOINLINE ::safeheron::proto::RSAKeyMeta* Arena::CreateMaybeMessage< ::safeheron::proto::RSAKeyMeta >(Arena* arena) {
-  return Arena::CreateInternal< ::safeheron::proto::RSAKeyMeta >(arena);
+  return Arena::CreateMessageInternal< ::safeheron::proto::RSAKeyMeta >(arena);
 }
 template<> PROTOBUF_NOINLINE ::safeheron::proto::RSASigShare* Arena::CreateMaybeMessage< ::safeheron::proto::RSASigShare >(Arena* arena) {
-  return Arena::CreateInternal< ::safeheron::proto::RSASigShare >(arena);
+  return Arena::CreateMessageInternal< ::safeheron::proto::RSASigShare >(arena);
 }
 template<> PROTOBUF_NOINLINE ::safeheron::proto::RSASigShareProof* Arena::CreateMaybeMessage< ::safeheron::proto::RSASigShareProof >(Arena* arena) {
-  return Arena::CreateInternal< ::safeheron::proto::RSASigShareProof >(arena);
+  return Arena::CreateMessageInternal< ::safeheron::proto::RSASigShareProof >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>
