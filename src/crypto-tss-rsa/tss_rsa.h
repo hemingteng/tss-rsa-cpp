@@ -15,6 +15,7 @@
 #include "RSASigShare.h"
 #include "RSAKeyMeta.h"
 #include "KeyGenParam.h"
+#include "emsa_pss.h"
 #include <vector>
 
 namespace safeheron {
