@@ -8,11 +8,9 @@
  */
 
 #include <cstring>
-#include <iostream>
 #include "crypto-bn/bn.h"
 #include "crypto-bn/rand.h"
 #include "exception/located_exception.h"
-#include <openssl/sha.h>
 #include "crypto-hash/sha256.h"
 #include "emsa_pss.h"
 
@@ -49,17 +47,24 @@ namespace safeheron {
 
             size_t emLen = (emBits + 7) / 8;
 
-            size_t sLen;
-            switch (saltLength) {
-                case SaltLength::AutoLength: sLen = emLen - 2 - CSHA256::OUTPUT_SIZE;
-                    break;
-                case SaltLength::EqualToHash: sLen = CSHA256::OUTPUT_SIZE;
-                    break;
-                default: sLen = emLen - 2 - CSHA256::OUTPUT_SIZE;
+            // check emLen
+            if(emLen < CSHA256::OUTPUT_SIZE + 2) {
+                throw LocatedException(__FILE__, __LINE__, __FUNCTION__, -1, "emLen < CSHA256::OUTPUT_SIZE + 2");
             }
 
-            if(emLen < CSHA256::OUTPUT_SIZE + sLen + 2 || sLen < 0) {
-                throw LocatedException(__FILE__, __LINE__, __FUNCTION__, -1, "emLen error: KeyBitLength is too short.");
+            size_t sLen;
+            switch (saltLength) {
+                case SaltLength::AutoLength:
+                {
+                    sLen =  emLen - 2 - CSHA256::OUTPUT_SIZE;
+                    break;
+                }
+                case SaltLength::EqualToHash:
+                default:
+                {
+                    sLen = CSHA256::OUTPUT_SIZE;
+                    break;
+                }
             }
 
             // 2.  Let mHash = Hash(M), an octet string of length hLen.
@@ -67,6 +72,11 @@ namespace safeheron {
             CSHA256 sha256;
             sha256.Write(reinterpret_cast<const uint8_t *>(m.c_str()), m.length());
             sha256.Finalize(mHash);
+
+            // 3.  If emLen < hLen + sLen + 2, output "encoding error" and stop.
+            if(emLen < CSHA256::OUTPUT_SIZE + sLen + 2) {
+                throw LocatedException(__FILE__, __LINE__, __FUNCTION__, -1, "emLen error: KeyBitLength is too short.");
+            }
 
             // 4.  Generate a random octet string salt of length sLen; if sLen = 0, then salt is the empty string.
             std::unique_ptr<uint8_t[]> salt(new uint8_t[sLen]);
@@ -130,17 +140,28 @@ namespace safeheron {
                 return false;
             }
 
+            // check emLen
+            if(emLen < CSHA256::OUTPUT_SIZE + 2) {
+                return false;
+            }
+
             size_t sLen;
             switch (saltLength) {
-                case SaltLength::AutoLength: sLen = emLen - 2 - CSHA256::OUTPUT_SIZE;
+                case SaltLength::AutoLength:
+                {
+                    sLen =  emLen - 2 - CSHA256::OUTPUT_SIZE;
                     break;
-                case SaltLength::EqualToHash: sLen = CSHA256::OUTPUT_SIZE;
+                }
+                case SaltLength::EqualToHash:
+                default:
+                {
+                    sLen = CSHA256::OUTPUT_SIZE;
                     break;
-                default: sLen = emLen - 2 - CSHA256::OUTPUT_SIZE;
+                }
             }
 
             // 3.  If emLen < hLen + sLen + 2, output "inconsistent" and stop.
-            if(emLen < CSHA256::OUTPUT_SIZE + sLen + 2 || sLen < 0) {
+            if(emLen < CSHA256::OUTPUT_SIZE + sLen + 2) {
                 // error: KeyBitLength is too short.
                 return false;
             }
@@ -188,14 +209,12 @@ namespace safeheron {
             //    or if the octet at position emLen - hLen - sLen - 1 (the leftmost
             //    position is "position 1") does not have hexadecimal value 0x01,
             //    output "inconsistent" and stop.
-            if(emLen - CSHA256::OUTPUT_SIZE - sLen - 2 > 0) {
-                int PS_len = emLen - CSHA256::OUTPUT_SIZE - sLen - 2;
-                const uint8_t * PS = DB.get();
-                for(int i = 0; i < PS_len; i++) {
-                    if(PS[i] != 0x00) {
-                        // error: inconsistent.
-                        return false;
-                    }
+            int PS_len = emLen - CSHA256::OUTPUT_SIZE - sLen - 2;
+            const uint8_t * PS = DB.get();
+            for(int i = 0; i < PS_len; i++) {
+                if(PS[i] != 0x00) {
+                    // error: inconsistent.
+                    return false;
                 }
             }
 

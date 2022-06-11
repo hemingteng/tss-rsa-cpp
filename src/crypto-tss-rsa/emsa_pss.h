@@ -19,7 +19,6 @@
 
 #include "crypto-bn/bn.h"
 #include "crypto-bn/rand.h"
-#include <openssl/sha.h>
 
 namespace safeheron {
     namespace tss_rsa {
