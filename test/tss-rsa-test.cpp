@@ -17,7 +17,7 @@ using safeheron::exception::BadAllocException;
 using safeheron::exception::RandomSourceException;
 
 TEST(TSS_RSA, PSS) {
-    std::string m = "hello world";
+    std::string doc = "hello world";
     KeyGenParam param(0,
                       BN("E4AAECAA632881A60D11813CC8379980C673BEFB959F44AA14BB15F141ADBE9E6B25FA3A8715435427B10AA608946D0A7B68A4F75BDC376E12010F813F480007", 16),
                       BN("C32F913ECDF403DB94B07A8D02AF2934A882226F3535E6436A6A2392A2C390E525D4531D6EFF2028AE8E16F856E0945348E007EDAC43B4CE9BE5E68D76E93E63", 16),
@@ -38,16 +38,24 @@ TEST(TSS_RSA, PSS) {
     std::cout << "pub.n: " << pub.n().Inspect() << std::endl;
     std::cout << "pub.e: " << pub.e().Inspect() << std::endl;
 
-    std::string doc = safeheron::tss_rsa::EncodeEMSA_PSS(m, key_bits_length,
+    // Prepare EMSA_PSS
+    std::string doc_pss = safeheron::tss_rsa::EncodeEMSA_PSS(doc, key_bits_length,
                                                          safeheron::tss_rsa::SaltLength::AutoLength);
-    std::cout << "EM: " << safeheron::encode::hex::EncodeToHex(doc) << std::endl;
-    EXPECT_TRUE(safeheron::tss_rsa::VerifyEMSA_PSS(m, key_bits_length, safeheron::tss_rsa::SaltLength::AutoLength, doc));
+    std::cout << "doc_pss: " << safeheron::encode::hex::EncodeToHex(doc) << std::endl;
+
+    // Sign
     for(int i = 0; i < l; i++) {
-        sig_arr.emplace_back(priv_arr[i].Sign(doc, key_meta, pub));
+        sig_arr.emplace_back(priv_arr[i].Sign(doc_pss, key_meta, pub));
     }
-    safeheron::tss_rsa::CombineSignatures(doc, sig_arr, pub, key_meta, sig);
+
+    // Combine
+    safeheron::tss_rsa::CombineSignatures(doc_pss, sig_arr, pub, key_meta, sig);
+
+    // Verify EMSA_PSS
+    EXPECT_TRUE(safeheron::tss_rsa::VerifyEMSA_PSS(doc, key_bits_length, safeheron::tss_rsa::SaltLength::AutoLength, doc_pss));
     std::cout << "signature: " << sig.Inspect() <<std::endl;
-    EXPECT_TRUE(pub.VerifySignature(doc, sig));
+    // Verify Signature
+    EXPECT_TRUE(pub.VerifySignature(doc_pss, sig));
 }
 
 int main(int argc, char **argv) {

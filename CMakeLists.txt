@@ -11,6 +11,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -Wall -Wextra -Wno-unused-parameter 
 add_subdirectory(src)
 
 option(ENABLE_TESTS "Enable tests" OFF)
+option(ENABLE_BENCHMARK "Enable benchmark" OFF)
 if (${ENABLE_TESTS})
     enable_testing()
     include_directories(/usr/local/include)

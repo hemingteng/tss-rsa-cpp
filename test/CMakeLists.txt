@@ -17,6 +17,8 @@ add_test(NAME pure-tss-rsa-test COMMAND pure-tss-rsa-test)
 add_executable(tss-rsa-test tss-rsa-test.cpp)
 add_test(NAME tss-rsa-test COMMAND tss-rsa-test)
 
-add_executable(tss-rsa-benchmark-test tss-rsa-benchmark-test.cpp)
-add_test(NAME tss-rsa-benchmark-test COMMAND tss-rsa-benchmark-test)
+if (${ENABLE_BENCHMARK})
+    add_executable(tss-rsa-benchmark-test tss-rsa-benchmark-test.cpp)
+    add_test(NAME tss-rsa-benchmark-test COMMAND tss-rsa-benchmark-test)
+endif()
 

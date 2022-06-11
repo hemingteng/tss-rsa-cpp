@@ -98,7 +98,7 @@ void BM_verifySig(benchmark::State& state) {
 int main(int argc, char** argv) {
     benchmark::Initialize(&argc, argv);
     int n_key_pairs = 10;
-    // Generate "n_key_pairs" key pairs
+    // Generate "n_key_pairs" key pairs: n_key_pairs = 10
     ::benchmark::RegisterBenchmark("BM_generateRandom", &BM_generateRandom, 4096, 5, 3)->Iterations(n_key_pairs)->Unit(benchmark::kSecond);
     // Generate 10 * "n_key_pairs" signature shares
     ::benchmark::RegisterBenchmark("BM_generateSig", &BM_generateSig)->Iterations(10)->Unit(benchmark::kSecond);

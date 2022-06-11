@@ -53,10 +53,10 @@ namespace safeheron {
          * @param m
          * @param keyBits
          * @param saltLength
-         * @param em
+         * @param emsa_pss
          * @return
          */
-        bool VerifyEMSA_PSS(const std::string &m, int keyBits, SaltLength saltLength, const std::string &em);
+        bool VerifyEMSA_PSS(const std::string &m, int keyBits, SaltLength saltLength, const std::string &emsa_pss);
 
     }
 }
