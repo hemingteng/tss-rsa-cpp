@@ -32,11 +32,10 @@ namespace safeheron {
          * Refer to https://datatracker.ietf.org/doc/html/rfc3447#appendix-B.2.1
          * @param seed
          * @param seedLen
-         * @param dbMask
          * @param maskLen
-         * @return
+         * @return MGF1 bytes.
          */
-        bool MGF1(uint8_t *seed, int seedLen, uint8_t *dbMask, int maskLen);
+        std::string MGF1(const uint8_t *seed, size_t seedLen, size_t maskLen);
 
         /**
          * EMSA-PSS-Encode
