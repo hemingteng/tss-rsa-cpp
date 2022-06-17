@@ -278,4 +278,4 @@ Table1.3 tss-rsa, tcrsa Running time Comparison
 ##### [2] [Description of TSS-RSA Signature Algorithm](./doc/Description_of_TSS_RSA_Signature_Algorithm.md)
 
 # Development Process & Contact
-This library is maintained by Safeheron. Contributions are highly welcomed! Besides GitHub issues and PRs, feel free to reach out by mail or join Safeheron Telegram for discussions on code and research.
+This library is maintained by Safeheron. Contributions are highly welcomed! Besides GitHub issues and PRs, feel free to reach out by mail.
